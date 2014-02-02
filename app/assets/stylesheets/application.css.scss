@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ body{
+ 		background-image: url("linkedin-background.png");
+ 		font-family: Helvetica, Arial, sans-serif;
+ 		font-size: 13px;
+ 		line-height: 17px;
+ 
+ }
+.nav{
+	position:fixed;
+	width: 100%;
+	background-image: -webkit-linear-gradient(top, #696969, #3f3f3f);
+	height: 42px;
+	box-shadow:0px 0px 10px #333;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.nav li{
+	display: inline;
+}
+.nav-link{
+	padding:10px;
+	padding-top:13px;
+	padding-bottom: 14px;
+	color:#D7D7D7;
+	text-decoration: none;
+	float:left;
+}
+#top-logo a{
+	background-image: url('https://static.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_flat_white_93x21.png');
+	background-repeat: no-repeat;
+	color: transparent; 
+	margin-top: 10px;
+	margin-left: 2%;
+	}
+#right-links{
+	float:right;
+	margin-right:2%;
+}
+
