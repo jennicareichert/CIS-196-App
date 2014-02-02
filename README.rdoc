@@ -2,17 +2,32 @@ http://enigmatic-river-3353.herokuapp.com/
 
 1/31/14
 
-Created accounts on Heroku & Git Hub
-Successful download of sublime.
-Established home page.
+	Created accounts on Heroku & Git Hub
+	Successful download of sublime.
+	Established home page.
 
-Startup command notes:
-	cd --> change directory in command 
-	git init --> initializes Git repository in path USERS/JENNICA/DROPBOX/PENN/CIS 196/APP
-	rails server --> loads the rails database
+	Startup command notes:
+		cd --> change directory in command 
+		git init --> initializes Git repository in path USERS/JENNICA/DROPBOX/PENN/CIS 196/APP
+		rails server --> loads the rails database
 
-Other command notes:
-	git add -A
-	git commit -m "some message about what I'm adding"
-	git push origin master
-	git push heroku master
+	Other command notes:
+		git add -A
+		git commit -m "some message about what I'm adding"
+		git push origin master
+		git push heroku master
+
+
+2/1/14
+
+	Re-mocked up the LinkedIn website to make up for missing the class.
+	Troubleshooting included:
+		-creation of the content box
+		-padding for the content box
+		-margins for the image
+		-use of the developer tools to find images, etc. from the original home page
+
+
+2/2/14
+	
+
