@@ -1,6 +1,7 @@
 http://enigmatic-river-3353.herokuapp.com/
 
 1/31/14
+	Homework#1:
 
 	Created accounts on Heroku & Git Hub
 	Successful download of sublime.
@@ -29,5 +30,16 @@ http://enigmatic-river-3353.herokuapp.com/
 
 
 2/2/14
-	
+	Homework #3: Began creation of the Google Home page.
+
+	Utilized the template from designing the LinkedIn page to start-off desing of the Google page.
+
+	Ran into difficulty with:
+	1) Centering the text and buttons in the navigation bar
+	2) Instilling the Google logo image:
+		a) centering image
+		b) shrinking image to match the appropriate size
+		c) aligning search bar and buttoms with the image
+		d) creating the proper spacing between the buttons
+	3) Creating the footer
 

@@ -6,18 +6,17 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-
 <div class="navbar">
-	<ul class="nav">
+	<ol class="nav">
 		<button class="nav-link" aria-label="Sign in" id="sign-in" name="sign-in">
-						<span id="sign-in">Sign in</span>
+			<span id="sign-in">Sign in</span>
 		</button>
-
-		<li><a class="nav-link" href="https://www.google.com/imghp?hl=en&tab=wi&ei=YArvUofaMNHEsAS0v4HAAw&ved=0CAQQqi4oAg">Images</a></li>
-		<li><a class="nav-link" href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1">Gmail</a></li>
-		<li><a class="nav-link" href="https://accounts.google.com/ServiceLogin?service=oz&passive=1209600&continue=https://plus.google.com/?gpsrc%3Dogpy0%26tab%3DwX%26partnerid%3Dogpy0">+You</a></li>
-
+		<li><a class="nav-link" id="Images" href="https://www.google.com/imghp?hl=en&tab=wi&ei=YArvUofaMNHEsAS0v4HAAw&ved=0CAQQqi4oAg">Images</a></li>
+		<li><a class="nav-link" id="Gmail" href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1">Gmail</a></li>
+		<li><a class="nav-link" id="You" href="https://accounts.google.com/ServiceLogin?service=oz&passive=1209600&continue=https://plus.google.com/?gpsrc%3Dogpy0%26tab%3DwX%26partnerid%3Dogpy0">+You</a></li>
+	</ol>
 </div>
 
 <%= yield %>

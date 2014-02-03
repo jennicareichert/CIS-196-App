@@ -3,14 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .content{
-	position: relative;
+	position: absolute;
 	width: 974px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 30%;
+	margin-right: 30%;
 	padding: 10px;
 	top:60px;
+	vertical-align: center;
 }
-
 .content-box{
 	width: 470px;
 	background-color: #fff;

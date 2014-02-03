@@ -11,51 +11,101 @@
  *= require_self
  *= require_tree .
  */
- body{
- 		background-color: white;
- 		font-family: Helvetica, Arial, sans-serif;
- 		font-size: 13px;
- 		line-height: 17px;
- 		padding: 0;
- 		margin: 0;
- 
- }
- title{
- 	background-color: url("google-logo.png");
- 	height: 269px;
- 	width:208px;
- 	position: relative;
- }
- .nav{
-	position:fixed;
-	width: 308px;
-	width: 100%;
+.nav{
+	position:relative;
+	min-width: 308px;
+	float: right;
+	width: 95.5%;
 	background-color: white;
 	height: 60px;
-}
-ul{
+	margin-left: 2%;
+	margin-right: 2.5%;
+	margin-top: 1%;
+	font-family: Arial, Sans-serif;
+	font-size: 14px;
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
+	height: 60px;
+	width: 100%;
 }
+ .nav button{
+ 		background-color: #4387fd; 
+ 		color: white; 
+ 		font-weight: bold;
+ 		background-position-x: initial;
+		background-position-y: initial;
+		background-size: initial;
+		background-repeat-x: initial;
+		background-repeat-y: initial;
+		background-attachment: initial;
+		background-origin: initial;
+		background-clip: initial;
+		border-style: none;
+		display: inline-block;
+		vertical-align: text-top;
+		float: right;
+		
+		height: 30px;
+		width: 70px;
+		padding: 2px 12px;
+		border-radius: 2px;
+ }
 .nav li{
 	display: inline;
 	line-height: 58px;
-	height: 60px;
+	
 	position: relative;
-
 }
 .nav-link{
-	padding:10px;
-	padding-top:13px;
-	padding-bottom: 14px;
-	color:#000;
+		color:#000;
 	text-decoration:none;
 	float:right;
 	position: relative;
 	display: inline-block;
-	line-height: 24px;
 	outline: none;
-	vertical-align:middle;
+	vertical-align:text-top;
+	text-decoration: none;
+	height: 24px;
+	width: 60px;
+}
+	
+input#search{
+	height: 28px;
+	width: 570px;
+}
+div#jsb{
+	position: absolute;
+	height: 102px;
+	width: 1296px;
+	display: block;
+}
+div#buttons{
+	height: 76px;
+	min-width: 60px;
+	padding: 2px 6px 3px;
+	border-radius: 2px;
+	margin: 8px 16px;
+	border: 1px;
+	border-color: #dcdcdc;
+	position: middle;
+	margin-left: 10%
+
+	}
+button#gbqfba{
+	padding: 0px 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 27px;
+	text-align: center;
+	color: #222;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	background: rgb(248, 248, 248);
+	
+	border: 1px;
+	border-color: #c6c6c6;
+	border-top-style: solid;
+	box-shadow: 0 1px 0 rgba(0,0,0,.15)
+
 }
