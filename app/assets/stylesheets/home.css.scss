@@ -10,9 +10,7 @@
 	padding: 10px;
 	top:60px;
 }
-.title h1{
-	font-size: 22px;
-}
+
 .content-box{
 	width: 470px;
 	background-color: #fff;
@@ -49,16 +47,18 @@
 	padding-right: 8px;
 }
 #button{
-	margin-top: 10px;
+	vertical-align: top;
+	line-height: 27px;
+	font-weight: bold;
 	width: 410px;
-	margin-left: 123px;
 }
 #button input{
-	width: 60px;
-	height:25px;
+	width: 15px;
+	height: 15px;
 	border-radius: 3px;
-	color: white;
-	font-size: 12px;
-	background-color: #0571a6;
-	border-color: #405a8b;
+	font-family:Arial,sans-serif;
+	color: black;
+	font-size: 11px;
+	background-color: rgba(0,0,0,.3);
+	border-color: transparent;
 }
