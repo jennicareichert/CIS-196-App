@@ -11,6 +11,16 @@
  *= require_self
  *= require_tree .
  */
+body{
+	margin: 0;
+	padding: 0;
+}
+.content{
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	vertical-align: middle;
+}
 .nav{
 	position:relative;
 	min-width: 308px;
@@ -19,44 +29,35 @@
 	background-color: white;
 	height: 60px;
 	margin-left: 2%;
-	margin-right: 2.5%;
+	margin-right: 2.3%;
 	margin-top: 1%;
 	font-family: Arial, Sans-serif;
 	font-size: 14px;
 	list-style-type: none;
 	height: 60px;
 	width: 100%;
+	padding-bottom: 120px;
 }
  .nav button{
  		background-color: #4387fd; 
  		color: white; 
  		font-weight: bold;
- 		background-position-x: initial;
-		background-position-y: initial;
-		background-size: initial;
-		background-repeat-x: initial;
-		background-repeat-y: initial;
-		background-attachment: initial;
-		background-origin: initial;
-		background-clip: initial;
-		border-style: none;
+ 		border-style: none;
 		display: inline-block;
-		vertical-align: text-top;
+		vertical-align: middle;
 		float: right;
-		
-		height: 30px;
-		width: 70px;
-		padding: 2px 12px;
+		height: 35px;
+		width: 78px;
+		margin-left: 0;
 		border-radius: 2px;
  }
-.nav li{
+li{
 	display: inline;
-	line-height: 58px;
-	
 	position: relative;
+	margin-top: 6px;
 }
 .nav-link{
-		color:#000;
+	color:#000;
 	text-decoration:none;
 	float:right;
 	position: relative;
@@ -66,31 +67,41 @@
 	text-decoration: none;
 	height: 24px;
 	width: 60px;
+	margin-top: 1%
 }
-	
-input#search{
+#matrix{
+	background-image: url("box.png");
+	color: transparent;
+	background-repeat: repeat-y;
+	margin-top: 10px;
+}
+#search input{
 	height: 28px;
 	width: 570px;
+	margin-top: 6px;
 }
-div#jsb{
-	position: absolute;
-	height: 102px;
-	width: 1296px;
-	display: block;
+#jsb{
+	position: relative;
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	vertical-align: middle;
+	margin-top: 20px;
 }
-div#buttons{
+#buttons{
 	height: 76px;
-	min-width: 60px;
+	width: 300px;
 	padding: 2px 6px 3px;
 	border-radius: 2px;
-	margin: 8px 16px;
 	border: 1px;
 	border-color: #dcdcdc;
-	position: middle;
-	margin-left: 10%
-
+	position: relative;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6px;
 	}
-button#gbqfba{
+.gbqfba{
 	padding: 0px 8px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 11px;
@@ -100,12 +111,55 @@ button#gbqfba{
 	color: #222;
 	letter-spacing: normal;
 	word-spacing: normal;
-	vertical-align: top;
+	vertical-align: middle;
+	margin-right: 6px;
+	margin-left: 6px;
 	background: rgb(248, 248, 248);
-	
-	border: 1px;
-	border-color: #c6c6c6;
-	border-top-style: solid;
+	border: 1px solid #c6c6c6;
 	box-shadow: 0 1px 0 rgba(0,0,0,.15)
+}
+#logo{
+	width: 280px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: middle;
+}
+#logo img{
+	width: 269px;
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: middle;
+}
+.bottom{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #f2f2f2;
+	border: 1px solid rgb(228, 228, 228);
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+
+		}
+.bottom-link{
+	font-family: Arial, Sans-serif;
+	font-size: 13.5px;
+	color: #666;
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 10px;
+	float:left;
+}
+#left-link{
+	margin-left: 2%;
+	float:left;
+}
+#right-link{
+	float:right;
+	margin-right: 2%;
 
 }
+

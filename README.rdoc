@@ -43,3 +43,13 @@ http://enigmatic-river-3353.herokuapp.com/
 		d) creating the proper spacing between the buttons
 	3) Creating the footer
 
+	Learned in office hours how to:
+	1) Better position items using margin: auto and vertical alignment
+	2) Clarified usage of "inline" to make the footers
+	3) Fixed prior spacing issues
+
+	IDEAS FOR PROJECTS:
+	1) Personal blog site that pulls content from social outlets (facebook, twitter, linkedin, etc.) along with regular blog entries 
+	2) An site for family photo sharing and comments on "life updates" 
+	3) An app for friends to stay in touch that shares & stores content instantly using a certain hashtag on social outlets
+

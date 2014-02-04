@@ -10,16 +10,39 @@
 <body>
 <div class="navbar">
 	<ol class="nav">
-		<button class="nav-link" aria-label="Sign in" id="sign-in" name="sign-in">
+		<button class="nav-button" aria-label="Sign in" id="sign-in" name="sign-in">
 			<span id="sign-in">Sign in</span>
 		</button>
+		
+		<li><a class="nav-link" id="matrix" href="http://www.google.com/intl/en/options/" title="Apps">Google matrix</a></li>
+
+
 		<li><a class="nav-link" id="Images" href="https://www.google.com/imghp?hl=en&tab=wi&ei=YArvUofaMNHEsAS0v4HAAw&ved=0CAQQqi4oAg">Images</a></li>
+		
 		<li><a class="nav-link" id="Gmail" href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1">Gmail</a></li>
+		
 		<li><a class="nav-link" id="You" href="https://accounts.google.com/ServiceLogin?service=oz&passive=1209600&continue=https://plus.google.com/?gpsrc%3Dogpy0%26tab%3DwX%26partnerid%3Dogpy0">+You</a></li>
 	</ol>
 </div>
-
 <%= yield %>
+
+<div class="bottomnav">
+	<ol class="bottom">
+		<div id="left-link">
+			<li><a class="bottom-link" href="https://www.google.com/intl/en/ads/?fg=1">Advertising</a></li>
+
+			<li><a class="bottom-link" href="https://www.google.com/services/?fg=1">Business</a></li>
+
+			<li><a class="bottom-link" href="https://www.google.com/intl/en/about.html?fg=1">About</a></li>
+		</div>
+
+		<div id="right-link">
+			<li><a class="bottom-link" href="https://www.google.com/intl/en/policies/?fg=1">Privacy</a></li>
+
+			<li><a class="bottom-link" href="https://www.google.com/preferences?hl=en">Settings</a></li>
+		</div>
+	</ol>
+</div>
 
 </body>
 </html>
