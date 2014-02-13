@@ -1,0 +1,31 @@
+<%=form_for(@user)do|f|%>
+	<div class="field">
+		<p>first name</p>
+		<%= f.text_field :first_name%>
+	</div>
+
+	<div class="field">
+		<p>last name</p>
+		<%= f.text_field :last_name%>
+	</div>
+
+	<div class="field">
+		<p>email</p>
+		<%= f.text_field :email%>
+	</div>
+
+	<div class="field">
+		<p>phone</p>
+		<%= f.text_field :phone%>
+	</div>
+
+	<div class="field">
+		<p>password</p>
+		<%= f.password_field :password%>
+	</div>
+
+	<div class = "actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+

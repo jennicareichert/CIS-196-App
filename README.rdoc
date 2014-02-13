@@ -55,3 +55,59 @@ http://enigmatic-river-3353.herokuapp.com/
 
 	3) An app for friends to stay in touch that shares & stores content instantly using a certain hashtag on social outlets
 		Additional content description: So here, I was thinking it'd be really cool to create an invite-only community where-in I can keep up to date on content will all of my 5 best friends here at Penn.  When we graduate, it may seem tedious to use Facebook chat and groups incessantly, so I'd want this to be more of a layout for comments, uploading content, and then having all of the content send a notification to users.  I'm sure there are other apps I could add to it, but this was my thought as of now. Would love feedback on how I could make this "invite only" community more fun for sharing content (photos, videos, links, articles, etc.) so that its more than just a blog.
+
+		CAN USE THE TWILIO-RUBY GEM TO SEND SMS NOTIFICATIONS.
+
+2/12/14
+
+Schema for my app:
+	Users
+		first_name:string
+		last_name:string
+		email:string
+		password:string
+		phone:string
+		group:belongs_to
+
+	Groups
+		group_name:string
+		users:belongs_to --> need to edit later as a many-to-many relationship (join table at some point)
+
+	Posts
+		title:string
+		body:text
+		link:string
+		user:belongs_to
+		*ADD PHOTOS LATER* -- add using filepicker
+
+	Comments
+		body:text
+		user:belongs_to
+		post:belongs_to
+
+		
+		*ADD EVENTS LATER* -- extra table added at end
+
+Things for Homework #4:
+	Created controllers for each object/table.(rails generate controller TABLE NAME new index show edit)
+
+	Created models for each object (rails generate model MODEL NAME attribute:type)
+
+	rake routes -- pathway to discover what the paths are to the different pages using controllers
+
+	rake db:migrate --> created my schema, and tables in my database.  
+
+	DON'T FORGET TO PUSH TO HEROKU: 
+	GIT PUSH HEROKU MASTER
+	HEROKU RUN RAKE DB:MIGRATE
+
+
+
+
+
+
+
+
+
+
+
