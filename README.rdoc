@@ -101,6 +101,19 @@ Things for Homework #4:
 	GIT PUSH HEROKU MASTER
 	HEROKU RUN RAKE DB:MIGRATE
 
+	Problems with homework #4:
+	Trouble with getting my links and forms to initially appear on the webpage.  Code appears to be written okay, but I can't get the images to show up on localholst:3000
+
+	Tried to set up the connections between comments and users & posts in the same way that a post "belongs to" a user.  Converted the table in index.html.erb for comments to show "comments.post.name" so that there is a belongs_to relationship when adding a new post, but not sure if that actually works or not.
+
+	Not sure if my blongs to connection with posts works either.  Created the link in the posts index.html.erb to show that the post should be <td><%= post.user.name %></td> (line 14) but my users have both first name and last name so the syntax is off....no?
+
+	ADD HREF LINKS FOR THE NAV BAR LATER!
+
+	
+
+
+
 
 
 

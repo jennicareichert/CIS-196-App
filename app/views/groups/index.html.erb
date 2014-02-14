@@ -1,2 +1,22 @@
-<h1>Groups#indext</h1>
-<p>Find me in app/views/groups/indext.html.erb</p>
+<table>
+	<tr>
+		<td>first_name</td>
+		<td>last_name</td>
+		<td>email</td>
+		<td>password</td>
+		<td>phone</td>
+		<td>group</td>
+	</tr>
+
+	<% @users.each do |user| %>
+		<tr>
+			<td><%= user.first_name %></td>
+			<td><%= user.last_name %></td>
+			<td><%= user.email %></td>
+			<td><%= user.password %></td>
+			<td><%= user.phone %></td>
+			<td><%= user.group %></td>
+		</tr>
+	<% end %>
+
+</table>

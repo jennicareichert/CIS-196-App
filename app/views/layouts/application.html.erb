@@ -1,1 +1,26 @@
+<html>
+<head>
+  <title>App</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div class="navbar">
+	<ul class="nav">
+			<li>Sign In</li>
+
+			<li>Create An Account</li> 
+
+			<li>Join a Group</li>
+		</div>
+	</ul> 
+</div>
+
+<%= yield %>
+
+</body>
+</html>
+
 
