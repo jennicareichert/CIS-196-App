@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
 def create
       @comment = Comment.new(comment_params)
-      if @task_list.save
+      if @comment.save
         redirect_to comments_path
       else 
         render 'new'

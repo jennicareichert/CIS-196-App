@@ -9,16 +9,17 @@ class PostsController < ApplicationController
 
   def create
   		@post=Post.new(post_params)
-  		if@post.save
-        redirect_to users_path
+  		if @post.save
+        redirect_to posts_path
       else
         render 'new'
   		end	
-  
-      def post_params
+  end  
+
+  def post_params
   	   params.require(:post).permit(:title, :body, :link, :user_id)
-      end
   end
+
 
   def show
   end

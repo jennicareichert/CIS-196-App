@@ -1,2 +1,25 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<div id="wrapper">
+	<div id="innerwrapper">
+		<%= form_for(@comment) do|f| %>
+			<div class="field">
+				<p>Post <NOFRAMES></NOFRAMES></p>
+				<%= f.collection_select :post_id, Post.all, :id, :title %>
+			</div>
+			
+			<div class="field">
+				<p>Comment</p>
+				<%= f.text_field :body%>
+			</div>
+
+			<div class="field">
+				<p>User Name</p>
+				<%= f.collection_select :user_id, User.all, :id, :last_name %>
+			</div>
+
+			<div class = "actions">
+				<%= f.submit %>
+			</div>
+
+		<% end %>
+	</div>
+</div>

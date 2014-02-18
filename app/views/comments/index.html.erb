@@ -1,15 +1,15 @@
 <table>
 	<tr>
 		<td>body</td>
-		<td>user</td>
 		<td>post</td>
+		<td>user</td>
 	</tr>
 
 	<% @comments.each do |comment| %>
 		<tr>
 			<td><%= comment.body %></td>
 			<td><%= comment.post.title %></td>
-			<td><%= comment.user.first_name.last_name %></td>
+			<td><%= comment.user.first_name unless comment.user.nil? %> <%= comment.user.last_name unless comment.user.nil? %></td>
 		</tr>
 	<% end %>
 	

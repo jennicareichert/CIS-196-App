@@ -1,2 +1,16 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<div id="wrapper">
+	<div id="innerwrapper">
+		<%= form_for(@group) do|f| %>
+			<div class="field">
+				<p>Group Name</p>
+				<%= f.text_field :group_name%>
+			</div>
+
+			<div class = "actions">
+				<%= f.submit %>
+			</div>
+
+		<% end %>
+	</div>
+</div>
+

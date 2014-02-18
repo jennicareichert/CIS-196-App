@@ -10,15 +10,18 @@
 <div class="navbar">
 	<ul class="nav">
 			<li>Sign In</li>
+<!-- //create this later on -->
 
-			<li>Create An Account</li> 
+			<li><%= link_to "Create An Account", new_user_path %></li> 
 
-			<li>Join a Group</li>
+			<li><%= link_to "Create a Group", new_group_path %></li>
+
+			<li><%= link_to "Home", root_path %></li>
 		</div>
 	</ul> 
 </div>
 
-<%= yield %>
+<div id="content"> <%= yield %> </div>
 
 </body>
 </html>

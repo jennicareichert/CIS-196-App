@@ -1,25 +1,30 @@
-<%=form_for(@post) do |f| %>
-	<div class="field">
-		<p>title</p>
-		<%= f.text_field :title%>
-	</div>
+<div id="wrapper">
+	<div id="innerwrapper">
 
-	<div class="field">
-		<p>body</p>
-		<%= f.text_field :body%>
-	</div>
+		<%=form_for(@post) do |f| %>
+			<div class="field">
+				<p>Post Title</p>
+				<%= f.text_field :title%>
+			</div>
 
-	<div class="field">
-		<p>link</p>
-		<%= f.text_field :link%>
-	</div>
+			<div class="field">
+				<p>Body</p>
+				<%= f.text_field :body%>
+			</div>
 
-	<div class="field">
-		<p>user</p>
-		<%= f.collection_select :user_id, User.all, :id, :name %>
-	</div>
+			<div class="field">
+				<p>Post a Link</p>
+				<%= f.text_field :link%>
+			</div>
 
-	<div class = "actions">
-		<%= f.submit %>
+			<div class="field">
+				<p>User Name</p>
+				<%= f.collection_select :user_id, User.all, :id, :last_name %>
+			</div>
+
+			<div class = "actions">
+				<%= f.submit %>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+</div>

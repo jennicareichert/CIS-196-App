@@ -11,8 +11,8 @@
 			<td><%= post.title %></td>
 			<td><%= post.body %></td>
 			<td><%= post.link %></td>
-			<td><%= post.user.first_name.last_name %></td>
-		</tr>
+			<td><%= post.user.first_name unless post.user.nil? %> <%= post.user.last_name unless post.user.nil? %></td>
+ 		</tr>
 	<% end %>
 	
 </table>
