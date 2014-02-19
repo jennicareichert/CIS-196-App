@@ -110,6 +110,18 @@ Things for Homework #4:
 
 	ADD HREF LINKS FOR THE NAV BAR LATER!
 
+	2/18/14 
+
+	
+	HOMEWORK #5:
+	Not sure where on the index.html.erb page we are supposed to put the information for show <%= link_to"show user", user_path(user.id) %>
+
+	Also having trouble with creating the show all users path on the user/index.html.erb for the link to in the table.  With the last_name and first_name components, it wasn't recognizing the ability to link.
+
+	
+
+
+
 	
 
 

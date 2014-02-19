@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div>
+	<h2><%= @user.first_name%> <%= @user.last_name %></h2>
+	<p><%= @user.email %></p>
+	<p><%= @user.password %></p>
+	<p><%= @user.phone %></p>
+	<p><%= @user.group.group_name %></p>
+</div>

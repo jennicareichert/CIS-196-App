@@ -1,2 +1,40 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div id="wrapper">
+	<div id="innerwrapper">
+		<%= form_for(@user) do|f| %>
+			<div class="field">
+				<p>First Name</p>
+				<%= f.text_field :first_name%>
+			</div>
+
+			<div class="field">
+				<p>Last Name</p>
+				<%= f.text_field :last_name%>
+			</div>
+
+			<div class="field">
+				<p>Group</p>
+				<%= f.collection_select :group_id, Group.all, :id, :group_name%>
+			</div>
+
+			<div class="field">
+				<p>Email</p>
+				<%= f.text_field :email%>
+			</div>
+
+			<div class="field">
+				<p>Phone</p>
+				<%= f.text_field :phone%>
+			</div>
+
+			<div class="field">
+				<p>Password</p>
+				<%= f.password_field :password%>
+			</div>
+
+			<div class = "actions">
+				<%= f.submit %>
+			</div>
+
+		<% end %>
+	</div>
+</div>
