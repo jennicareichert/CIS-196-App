@@ -115,8 +115,19 @@ Things for Homework #4:
 	
 	HOMEWORK #5:
 	Not sure where on the index.html.erb page we are supposed to put the information for show <%= link_to"show user", user_path(user.id) %>
+	(Jenny emailed me with a solution)
 
-	Also having trouble with creating the show all users path on the user/index.html.erb for the link to in the table.  With the last_name and first_name components, it wasn't recognizing the ability to link.
+	Also having trouble with creating the show all users path on the user/index.html.erb for the link to in the table.  With the last_name and first_name components, it wasn't recognizing the ability to link. (Jenny emailed me with a solution)
+
+	ADD THE MANY TO MANY RELATIONSHIP SOON SO THAT WE CAN SEE WHICH USERS BELONG TO THIS GROUP IN THE GROUP/SHOW.HTML.ERB page
+
+	When going in to edit the groups, I keep getting returned the comment that the first argument cannot be nil or empty, which doesn't make sense since there aren't any data points that don't belong to a group or have a group name filled in...
+
+	Also returning the error that the method for "comment.post.title" isn't working for me in the comments#index page.
+
+	Need to have comments that are linked to a post also delete when post deletes. Same for users should be deleted if a group is deleted (can't exist without a group)
+
+
 
 	
 

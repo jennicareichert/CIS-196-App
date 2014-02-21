@@ -1,11 +1,19 @@
-<table>
-	<tr>
-		<td>group_name</td>
-	</tr>
+<div id="wrapper">
+	<div id="innerwrapper">
+		<table>
+			<tr>
+				<td>group_name</td>
+			</tr>
 
-	<% @groups.each do |group| %>
-		<tr>
-			<td><%= group.group_name %></td>
-		<% end %>
-
-</table>
+			<% @groups.each do |group| %>
+				<tr>
+					<td><%= link_to group.group_name, group_path(group.id) %></td>
+					<td><%= group.group_name %></td>
+					<td><%=link_to "Edit Group", edit_group_path(group.id)%></td>
+					<td><%= link_to "Destroy Group", group, confirm: "Are you sure you would like to delete your group?", method: :delete %></td>
+				</tr>
+			<% end %>
+		</table>
+		
+	</div>
+</div>

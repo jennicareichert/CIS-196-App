@@ -1,2 +1,10 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div id="wrapper">
+	<div id="innerwrapper">
+		<div>
+			<h2><%= @post.title%></h2>
+			<p><%= @post.body %></p>
+			<p><%= @post.link %></p>
+			<p><%= @post.user.last_name %></p>
+		</div>
+	</div>
+</div>
