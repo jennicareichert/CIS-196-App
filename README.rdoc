@@ -121,11 +121,56 @@ Things for Homework #4:
 
 	ADD THE MANY TO MANY RELATIONSHIP SOON SO THAT WE CAN SEE WHICH USERS BELONG TO THIS GROUP IN THE GROUP/SHOW.HTML.ERB page
 
-	When going in to edit the groups, I keep getting returned the comment that the first argument cannot be nil or empty, which doesn't make sense since there aren't any data points that don't belong to a group or have a group name filled in...
+	When going in to edit the groups, I keep getting returned the comment that the first argument cannot be nil or empty, which doesn't make sense since there aren't any data points that don't belong to a group or have a group name filled in... (fixed in office hours)
 
-	Also returning the error that the method for "comment.post.title" isn't working for me in the comments#index page.
+	Also returning the error that the method for "comment.post.title" isn't working for me in the comments#index page. (fixed in office hours)
 
-	Need to have comments that are linked to a post also delete when post deletes. Same for users should be deleted if a group is deleted (can't exist without a group)
+	Need to have comments that are linked to a post also delete when post deletes. Same for users should be deleted if a group is deleted (can't exist without a group) (fixed in office hours)
+
+2/24/14
+	
+	Using Ruby Gems:
+		Can search for Ruby Gems on command line:
+			Browses all gems using "gem search" or 'gem search -r "gem name"'
+			Can list locally installed ones using "gem list".
+			Can manage gems with the gem file in sublime.
+				We want gem "devise', '3.8'
+				bundle install or bundle update
+				bundle open outdated
+
+				rails g devise:install
+
+		rails generate migration RemoveEmailFromUsers emailstring
+		rails destroy migration Devise
+		rake db:migrate
+		
+			*If you get an error page, try reloading the rails server*
+
+		Creating information for user validation.
+
+			<c class="notice"><%= notice %></c>
+			<c class = alerts"><%= alert %></c>
+
+			make it so that your login shows only when logged out, etc.
+			<%= if user_signed_in?
+
+			add to the application controller
+			before_filter :authenticate_user:
+
+		add to the posts_controller.rb
+			if @post.user_id current_user.id
+				render  'new'
+			else 
+
+		give the user more power to view information
+			rails generate devise:views
+			use registrations/new.html.erb
+				edit this one to ask for user name
+
+
+
+
+
 
 
 

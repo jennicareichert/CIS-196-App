@@ -26,11 +26,11 @@ def create
   end
 
  def edit
-    @Group=Group.find(params[:id])
+    @group=Group.find(params[:id])
   end
 
   def update
-    @Group=Group.find(params[:id])
+    @group=Group.find(params[:id])
     if@group.update_attributes(group_params)
       redirect_to group_path(@group.id)
     else

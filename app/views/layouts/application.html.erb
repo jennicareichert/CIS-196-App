@@ -9,8 +9,11 @@
 <body>
 <div class="navbar">
 	<ul class="nav">
-			<li>Sign In</li>
-<!-- //create this later on -->
+			<% if !user_signed_in? %>
+				<li><%= link_to 'Login', new_user_session_path %> </li>
+			<% else %>
+				<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+			<% end %>
 
 			<li><%= link_to "Create An Account", new_user_path %></li> 
 
@@ -20,6 +23,11 @@
 		</div>
 	</ul> 
 </div>
+
+
+<p class="notice"><%= notice %></p>
+<p class = "alerts"><%= alert %></p>
+
 
 <div id="content"> <%= yield %> </div>
 
