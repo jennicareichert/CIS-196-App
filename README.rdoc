@@ -136,7 +136,8 @@ Things for Homework #4:
 			Can manage gems with the gem file in sublime.
 			Bundle open outdated or bundle install
 
-	Everything went pretty smoothly with adding the ruby gem for devise.  A little tricky with the formatting, but otherwise, all okay.  Want to add a few other gems.
+	HOMEWORK #6:
+	Everything went pretty smoothly with adding the ruby gem for devise.  A little tricky with the formatting, but otherwise, all okay.  Want to add a few other gems (see below).  No really big issues to report.  Only glitch was getting my originally coded views for user to no longer interfere and show up since we're now using devise.
 
 	Attempted install of filepicker-rails and eventually twilio too (not yet though).  Only completed the installation of the Devise gem at this point for the homework and plan to finish the others as the app becomes more developed.
 

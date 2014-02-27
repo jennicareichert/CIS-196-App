@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
 def create
       @comment = Comment.new(comment_params)
-    if @post.user_id != current_user.id
+    if @comment.user_id != current_user.id
         redirect_to root_path
       else 
         if @comment.save
@@ -42,7 +42,7 @@ def create
 
   def update
     @comment=Comment.find(params[:id])
-   if @post.user_id != current_user.id
+   if @comment.user_id != current_user.id
         redirect_to root_path
     else 
       if@comment.update_attributes(comment_params)
