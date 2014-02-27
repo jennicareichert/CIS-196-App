@@ -18,8 +18,7 @@
 			</div>
 
 			<div class="field">
-				<p>User Name</p>
-				<%= f.collection_select :user_id, User.all, :id, :last_name %>
+				<%= f.hidden_field :user_id, :value =>current_user.id %>
 			</div>
 
 			<div class = "actions">

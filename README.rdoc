@@ -134,38 +134,14 @@ Things for Homework #4:
 			Browses all gems using "gem search" or 'gem search -r "gem name"'
 			Can list locally installed ones using "gem list".
 			Can manage gems with the gem file in sublime.
-				We want gem "devise', '3.8'
-				bundle install or bundle update
-				bundle open outdated
+			Bundle open outdated or bundle install
 
-				rails g devise:install
+	Everything went pretty smoothly with adding the ruby gem for devise.  A little tricky with the formatting, but otherwise, all okay.  Want to add a few other gems.
 
-		rails generate migration RemoveEmailFromUsers emailstring
-		rails destroy migration Devise
-		rake db:migrate
-		
-			*If you get an error page, try reloading the rails server*
+	Attempted install of filepicker-rails and eventually twilio too (not yet though).  Only completed the installation of the Devise gem at this point for the homework and plan to finish the others as the app becomes more developed.
 
-		Creating information for user validation.
 
-			<c class="notice"><%= notice %></c>
-			<c class = alerts"><%= alert %></c>
-
-			make it so that your login shows only when logged out, etc.
-			<%= if user_signed_in?
-
-			add to the application controller
-			before_filter :authenticate_user:
-
-		add to the posts_controller.rb
-			if @post.user_id current_user.id
-				render  'new'
-			else 
-
-		give the user more power to view information
-			rails generate devise:views
-			use registrations/new.html.erb
-				edit this one to ask for user name
+			
 
 
 

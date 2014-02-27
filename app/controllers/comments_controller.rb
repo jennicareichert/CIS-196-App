@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   def new
-  	@comment= Comment.new
+  	if user_signed_in?
+      @comment= Comment.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def index
@@ -9,11 +13,15 @@ class CommentsController < ApplicationController
 
 def create
       @comment = Comment.new(comment_params)
-      if @comment.save
-        redirect_to comments_path
+    if @post.user_id != current_user.id
+        redirect_to root_path
       else 
-        render 'new'
-      end 
+        if @comment.save
+          redirect_to comments_path
+        else 
+          render 'new'
+        end 
+    end
   end
 
   def comment_params
@@ -25,15 +33,23 @@ def create
   end
 
   def edit
-    @comment=Comment.find(params[:id])
+    if user_signed_in?
+      @comment=Comment.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update
     @comment=Comment.find(params[:id])
-    if@comment.update_attributes(comment_params)
-      redirect_to comment_path(@comment.id)
-    else
-        render 'edit'
+   if @post.user_id != current_user.id
+        redirect_to root_path
+    else 
+      if@comment.update_attributes(comment_params)
+         redirect_to comment_path(@comment.id)
+      else
+          render 'edit'
+      end
     end
   end
 

@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   def new
-  	@post=Post.new
+  	if user_signed_in?
+      @post=Post.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def index
@@ -9,11 +13,15 @@ class PostsController < ApplicationController
 
   def create
   		@post=Post.new(post_params)
-  		if @post.save
-        redirect_to posts_path
-      else
-        render 'new'
-  		end	
+      if @post.user_id != current_user.id
+        redirect_to root_path
+      else 
+        if @post.save
+          redirect_to posts_path
+        else
+          render 'new'
+  		  end	
+      end
   end  
 
   def post_params
@@ -26,16 +34,24 @@ class PostsController < ApplicationController
   end
 
  def edit
-    @post=Post.find(params[:id])
+    if user_signed_in?
+     @post=Post.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update
     @post=Post.find(params[:id])
-    if@post.update_attributes(post_params)
-      redirect_to post_path(@post.id)
-    else
-        render 'edit'
-    end
+    if @post.user_id != current_user.id
+        redirect_to root_path
+      else 
+        if@post.update_attributes(post_params)
+           redirect_to post_path(@post.id)
+        else
+           render 'edit'
+        end
+      end
   end
 
   def destroy
