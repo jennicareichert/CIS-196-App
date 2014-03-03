@@ -1,5 +1,16 @@
 <div id="wrapper">
 	<div id="innerwrapper">
+		
+		<div class="error-msg">
+			<% if @comment.errors.any? %>
+			<ul>
+				<% @comment.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+			<% end %>
+		</div>
+
 		<%= form_for(@comment) do|f| %>
 			<div class="field">
 				<p>Post Title<NOFRAMES></NOFRAMES></p>

@@ -1,6 +1,17 @@
 <div id="wrapper">
 	<div id="innerwrapper">
 		
+		<div class="error-msg">
+			<% if @group.errors.any? %>
+			<ul>
+				<% @group.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+			<% end %>
+		</div>
+
+
 		<%= form_for(@group) do|f| %>
 			
 			<div class="field">

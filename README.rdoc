@@ -2,25 +2,23 @@ http://enigmatic-river-3353.herokuapp.com/
 
 1/31/14
 	Homework#1:
+		Created accounts on Heroku & Git Hub
+		Successful download of sublime.
+		Established home page.
 
-	Created accounts on Heroku & Git Hub
-	Successful download of sublime.
-	Established home page.
+		Startup command notes:
+			cd --> change directory in command 
+			git init --> initializes Git repository in path USERS/JENNICA/DROPBOX/PENN/CIS 196/APP
+			rails server --> loads the rails database
 
-	Startup command notes:
-		cd --> change directory in command 
-		git init --> initializes Git repository in path USERS/JENNICA/DROPBOX/PENN/CIS 196/APP
-		rails server --> loads the rails database
-
-	Other command notes:
-		git add -A
-		git commit -m "some message about what I'm adding"
-		git push origin master
-		git push heroku master
+		Other command notes:
+			git add -A
+			git commit -m "some message about what I'm adding"
+			git push origin master
+			git push heroku master
 
 
 2/1/14
-
 	Re-mocked up the LinkedIn website to make up for missing the class.
 	Troubleshooting included:
 		-creation of the content box
@@ -30,105 +28,103 @@ http://enigmatic-river-3353.herokuapp.com/
 
 
 2/2/14
-	Homework #3: Began creation of the Google Home page.
+	Homework #3: 
+		Utilized the template from designing the LinkedIn page to start-off desing of the Google page.
 
-	Utilized the template from designing the LinkedIn page to start-off desing of the Google page.
+		Ran into difficulty with:
+		1) Centering the text and buttons in the navigation bar
+		2) Instilling the Google logo image:
+			a) centering image
+			b) shrinking image to match the appropriate size
+			c) aligning search bar and buttoms with the image
+			d) creating the proper spacing between the buttons
+		3) Creating the footer
 
-	Ran into difficulty with:
-	1) Centering the text and buttons in the navigation bar
-	2) Instilling the Google logo image:
-		a) centering image
-		b) shrinking image to match the appropriate size
-		c) aligning search bar and buttoms with the image
-		d) creating the proper spacing between the buttons
-	3) Creating the footer
+		Learned in office hours how to:
+		1) Better position items using margin: auto and vertical alignment
+		2) Clarified usage of "inline" to make the footers
+		3) Fixed prior spacing issues
 
-	Learned in office hours how to:
-	1) Better position items using margin: auto and vertical alignment
-	2) Clarified usage of "inline" to make the footers
-	3) Fixed prior spacing issues
+		IDEAS FOR PROJECTS:
+		1) Personal blog site that pulls content from social outlets (facebook, twitter, linkedin, etc.) along with regular blog entries 
+		2) An site for family photo sharing and comments on "life updates" 
+			Additional content description: This was really just an idea (similar to below) that would be functional in keeping in touch with all of my family members as we all get older (I'm 1 of 5 kids!).  I don't think, in hindsight, this could be all too elaborate and probably isn't that functionally challenging as I think more about it...but I'd love feedback on if I could make this a more complex project.
 
-	IDEAS FOR PROJECTS:
-	1) Personal blog site that pulls content from social outlets (facebook, twitter, linkedin, etc.) along with regular blog entries 
-	2) An site for family photo sharing and comments on "life updates" 
-		Additional content description: This was really just an idea (similar to below) that would be functional in keeping in touch with all of my family members as we all get older (I'm 1 of 5 kids!).  I don't think, in hindsight, this could be all too elaborate and probably isn't that functionally challenging as I think more about it...but I'd love feedback on if I could make this a more complex project.
+		3) An app for friends to stay in touch that shares & stores content instantly using a certain hashtag on social outlets
+			Additional content description: So here, I was thinking it'd be really cool to create an invite-only community where-in I can keep up to date on content will all of my 5 best friends here at Penn.  When we graduate, it may seem tedious to use Facebook chat and groups incessantly, so I'd want this to be more of a layout for comments, uploading content, and then having all of the content send a notification to users.  I'm sure there are other apps I could add to it, but this was my thought as of now. Would love feedback on how I could make this "invite only" community more fun for sharing content (photos, videos, links, articles, etc.) so that its more than just a blog.
 
-	3) An app for friends to stay in touch that shares & stores content instantly using a certain hashtag on social outlets
-		Additional content description: So here, I was thinking it'd be really cool to create an invite-only community where-in I can keep up to date on content will all of my 5 best friends here at Penn.  When we graduate, it may seem tedious to use Facebook chat and groups incessantly, so I'd want this to be more of a layout for comments, uploading content, and then having all of the content send a notification to users.  I'm sure there are other apps I could add to it, but this was my thought as of now. Would love feedback on how I could make this "invite only" community more fun for sharing content (photos, videos, links, articles, etc.) so that its more than just a blog.
+			CAN USE THE TWILIO-RUBY GEM TO SEND SMS NOTIFICATIONS.
 
-		CAN USE THE TWILIO-RUBY GEM TO SEND SMS NOTIFICATIONS.
 
 2/12/14
+	Schema for my app:
+		Users
+			first_name:string
+			last_name:string
+			email:string
+			password:string
+			phone:string
+			group:belongs_to
 
-Schema for my app:
-	Users
-		first_name:string
-		last_name:string
-		email:string
-		password:string
-		phone:string
-		group:belongs_to
+		Groups
+			group_name:string
+			users:belongs_to --> need to edit later as a many-to-many relationship (join table at some point)
 
-	Groups
-		group_name:string
-		users:belongs_to --> need to edit later as a many-to-many relationship (join table at some point)
+		Posts
+			title:string
+			body:text
+			link:string
+			user:belongs_to
+			*ADD PHOTOS LATER* -- add using filepicker
 
-	Posts
-		title:string
-		body:text
-		link:string
-		user:belongs_to
-		*ADD PHOTOS LATER* -- add using filepicker
+		Comments
+			body:text
+			user:belongs_to
+			post:belongs_to
 
-	Comments
-		body:text
-		user:belongs_to
-		post:belongs_to
+			
+			*ADD EVENTS LATER* -- extra table added at end
 
-		
-		*ADD EVENTS LATER* -- extra table added at end
+	Homework #4:
+		Created controllers for each object/table.(rails generate controller TABLE NAME new index show edit)
 
-Things for Homework #4:
-	Created controllers for each object/table.(rails generate controller TABLE NAME new index show edit)
+		Created models for each object (rails generate model MODEL NAME attribute:type)
 
-	Created models for each object (rails generate model MODEL NAME attribute:type)
+		rake routes -- pathway to discover what the paths are to the different pages using controllers
 
-	rake routes -- pathway to discover what the paths are to the different pages using controllers
+		rake db:migrate --> created my schema, and tables in my database.  
 
-	rake db:migrate --> created my schema, and tables in my database.  
+		DON'T FORGET TO PUSH TO HEROKU: 
+		GIT PUSH HEROKU MASTER
+		HEROKU RUN RAKE DB:MIGRATE
 
-	DON'T FORGET TO PUSH TO HEROKU: 
-	GIT PUSH HEROKU MASTER
-	HEROKU RUN RAKE DB:MIGRATE
+		Problems with homework #4:
+		Trouble with getting my links and forms to initially appear on the webpage.  Code appears to be written okay, but I can't get the images to show up on localholst:3000
 
-	Problems with homework #4:
-	Trouble with getting my links and forms to initially appear on the webpage.  Code appears to be written okay, but I can't get the images to show up on localholst:3000
+		Tried to set up the connections between comments and users & posts in the same way that a post "belongs to" a user.  Converted the table in index.html.erb for comments to show "comments.post.name" so that there is a belongs_to relationship when adding a new post, but not sure if that actually works or not.
 
-	Tried to set up the connections between comments and users & posts in the same way that a post "belongs to" a user.  Converted the table in index.html.erb for comments to show "comments.post.name" so that there is a belongs_to relationship when adding a new post, but not sure if that actually works or not.
+		Not sure if my blongs to connection with posts works either.  Created the link in the posts index.html.erb to show that the post should be <td><%= post.user.name %></td> (line 14) but my users have both first name and last name so the syntax is off....no?
 
-	Not sure if my blongs to connection with posts works either.  Created the link in the posts index.html.erb to show that the post should be <td><%= post.user.name %></td> (line 14) but my users have both first name and last name so the syntax is off....no?
-
-	ADD HREF LINKS FOR THE NAV BAR LATER!
-
-	2/18/14 
+		ADD HREF LINKS FOR THE NAV BAR LATER!
 
 	
-	HOMEWORK #5:
-	Not sure where on the index.html.erb page we are supposed to put the information for show <%= link_to"show user", user_path(user.id) %>
-	(Jenny emailed me with a solution)
+	2/18/14 
+		HOMEWORK #5:
+			Not sure where on the index.html.erb page we are supposed to put the information for show <%= link_to"show user", user_path(user.id) %>
+			(Jenny emailed me with a solution)
 
-	Also having trouble with creating the show all users path on the user/index.html.erb for the link to in the table.  With the last_name and first_name components, it wasn't recognizing the ability to link. (Jenny emailed me with a solution)
+			Also having trouble with creating the show all users path on the user/index.html.erb for the link to in the table.  With the last_name and first_name components, it wasn't recognizing the ability to link. (Jenny emailed me with a solution)
 
-	ADD THE MANY TO MANY RELATIONSHIP SOON SO THAT WE CAN SEE WHICH USERS BELONG TO THIS GROUP IN THE GROUP/SHOW.HTML.ERB page
+			ADD THE MANY TO MANY RELATIONSHIP SOON SO THAT WE CAN SEE WHICH USERS BELONG TO THIS GROUP IN THE GROUP/SHOW.HTML.ERB page
 
-	When going in to edit the groups, I keep getting returned the comment that the first argument cannot be nil or empty, which doesn't make sense since there aren't any data points that don't belong to a group or have a group name filled in... (fixed in office hours)
+			When going in to edit the groups, I keep getting returned the comment that the first argument cannot be nil or empty, which doesn't make sense since there aren't any data points that don't belong to a group or have a group name filled in... (fixed in office hours)
 
-	Also returning the error that the method for "comment.post.title" isn't working for me in the comments#index page. (fixed in office hours)
+			Also returning the error that the method for "comment.post.title" isn't working for me in the comments#index page. (fixed in office hours)
 
-	Need to have comments that are linked to a post also delete when post deletes. Same for users should be deleted if a group is deleted (can't exist without a group) (fixed in office hours)
+			Need to have comments that are linked to a post also delete when post deletes. Same for users should be deleted if a group is deleted (can't exist without a group) (fixed in office hours)
+
 
 2/24/14
-	
 	Using Ruby Gems:
 		Can search for Ruby Gems on command line:
 			Browses all gems using "gem search" or 'gem search -r "gem name"'
@@ -137,9 +133,19 @@ Things for Homework #4:
 			Bundle open outdated or bundle install
 
 	HOMEWORK #6:
-	Everything went pretty smoothly with adding the ruby gem for devise.  A little tricky with the formatting, but otherwise, all okay.  Want to add a few other gems (see below).  No really big issues to report.  Only glitch was getting my originally coded views for user to no longer interfere and show up since we're now using devise.
+		Everything went pretty smoothly with adding the ruby gem for devise.  A little tricky with the formatting, but otherwise, all okay.  Want to add a few other gems (see below).  No really big issues to report.  Only glitch was getting my originally coded views for user to no longer interfere and show up since we're now using devise.
 
-	Attempted install of filepicker-rails and eventually twilio too (not yet though).  Only completed the installation of the Devise gem at this point for the homework and plan to finish the others as the app becomes more developed.
+		Attempted install of filepicker-rails and eventually twilio too (not yet though).  Only completed the installation of the Devise gem at this point for the homework and plan to finish the others as the app becomes more developed.
+
+3/3/14
+	HOMEWORK #7:
+		Added validations to groups (presence, length, and uniqueness)
+		Added validations to posts (presence, length)
+		Added validations to comments (presence)
+		Added validations to user (phone number and number format)
+
+
+
 
 
 			
