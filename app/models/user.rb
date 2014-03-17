@@ -13,5 +13,6 @@ class User < ActiveRecord::Base
 
  #validations
   validates :phone, format: {with:phoneFormatValidation}
+   validates :name, presence: true
 
 end

@@ -144,6 +144,25 @@ http://enigmatic-river-3353.herokuapp.com/
 		Added validations to comments (presence)
 		Added validations to user (phone number and number format)
 
+3/17/14
+	Heroku Add-ons:
+		Ask for credit card information -- required in case you go over your limits
+
+		Heroku addons:add sendgrid:starter
+		heroku addons:docs sendgrid ---> opens the docs in your browser
+
+		Need to hope two in development and production.
+
+		gem 'letter_opener', github: 'ryanb/letter_opener'
+		need to run something else in cmd
+
+		config.action_mailer.delivery_method = :letter_opener --> in config, environments, development (?)
+		config.action_mailer.default_url_options = {:host => "localhost:3000"} --> in config, application.rb
+
+		rails generate mailer notifications new_comment
+
+		
+
 
 
 

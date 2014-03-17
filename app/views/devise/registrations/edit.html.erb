@@ -13,6 +13,10 @@
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
         
+        <div><%= f.label :name %><br/>
+            <%= f.text_field :name %>
+        </div>
+        
         <div><%= f.label :phone %><br />
         <%= f.text_field :phone%></div>
 

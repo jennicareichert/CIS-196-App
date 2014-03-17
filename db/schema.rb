@@ -42,8 +42,7 @@ ActiveRecord::Schema.define(version: 20140224175712) do
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "password"
     t.string   "phone"
     t.integer  "group_id"
