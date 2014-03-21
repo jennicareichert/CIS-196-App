@@ -12,7 +12,7 @@
 					<td><%= link_to comment.body, comment_path(comment.id) %></td>
 					<td><%= comment.body %></td>
 					<td><%= comment.post.title unless comment.post.nil? %></td>
-					<td><%= comment.user.first_name unless comment.user.nil? %> <%= comment.user.last_name unless comment.user.nil? %></td>
+					<td><%= comment.user.name unless comment.user.nil? %></td>
 					<td><%=link_to "Edit Comment", edit_comment_path(comment.id)%></td>
 					<td><%= link_to "Destroy Comment", comment, confirm: "Are you sure you would like to delete your comment?", method: :delete %></td>
 				</tr>

@@ -4,7 +4,11 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  belongs_to :group
+
+  has_many :groups
+
+  # has_many :groupings, :dependent => :destroy
+  # has_many :groups, :through => :groupings
 
   has_many :posts, :dependent => :destroy
   has_many :comments, :dependent => :destroy

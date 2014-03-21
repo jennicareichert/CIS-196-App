@@ -14,7 +14,7 @@
 					<td><%= post.title %></td>
 					<td><%= post.body %></td>
 					<td><%= post.link %></td>
-					<td><%= post.user.first_name unless post.user.nil? %> <%= post.user.last_name unless post.user.nil? %></td>
+					<td><%= post.user.name unless post.user.nil? %></td>
 					<td><%=link_to "Edit Post", edit_post_path(post.id)%></td>
 					<td><%= link_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %></td>
 		 		</tr>

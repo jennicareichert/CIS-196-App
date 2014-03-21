@@ -1,5 +1,9 @@
 class Group < ActiveRecord::Base
-	 has_many :users, :dependent => :destroy
+
+belongs_to :user
+	
+# has_many :groupings, :dependent => :destroy
+# has_many :users, :through => :groupings
 
 #validations
 validates :group_name, presence: true

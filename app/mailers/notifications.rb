@@ -1,5 +1,5 @@
 class Notifications < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "friends@example.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -13,4 +13,15 @@ class Notifications < ActionMailer::Base
 
     mail to: comment.post.user.email
   end
+
+  # def new_joingroup(user)
+  #   @greeting = "Hi"
+  #   @id = comment.id
+  #   @commenter = comment.user.name
+
+  #   mail to: comment.post.user.email
+  # end
+
+  # change this to be for the new user notifications
+
 end
