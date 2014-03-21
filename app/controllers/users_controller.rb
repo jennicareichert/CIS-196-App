@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+# attr_writer :group_name
+after_save :assign_groups
+
   def new
   		@user=User.new
   end
@@ -43,5 +47,8 @@ class UsersController < ApplicationController
       redirect_to users_path
   end
 
+private
+  def assign_groups
+    if @group_name || groups.map()
   
 end

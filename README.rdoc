@@ -161,6 +161,11 @@ http://enigmatic-river-3353.herokuapp.com/
 
 		rails generate mailer notifications new_comment
 
+3/21/14
+	Added the letter opener successfully! Made the "Name" attribute to the users so that they can pull the user names when sending the comments emails.
+
+	Worked with Jenny to add the "many to many" relationship for my groups so that I can effectively implement the twilio sms texting app in the near future (not really relevant for this homework though). 
+
 		
 
 
