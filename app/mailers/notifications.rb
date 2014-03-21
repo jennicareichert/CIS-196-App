@@ -13,15 +13,4 @@ class Notifications < ActionMailer::Base
 
     mail to: comment.post.user.email
   end
-
-  # def new_joingroup(user)
-  #   @greeting = "Hi"
-  #   @id = comment.id
-  #   @commenter = comment.user.name
-
-  #   mail to: comment.post.user.email
-  # end
-
-  # change this to be for the new user notifications
-
 end
