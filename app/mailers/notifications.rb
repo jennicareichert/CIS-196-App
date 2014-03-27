@@ -13,4 +13,13 @@ class Notifications < ActionMailer::Base
 
     mail to: comment.post.user.email
   end
+
+  def join_group (grouping)
+    @greeting = "Hey there!"
+    @user = grouping.user.name
+    @id = grouping.group_id
+
+    mail to: grouping.user.email
+  end
+
 end

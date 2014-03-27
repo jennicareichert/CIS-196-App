@@ -6,14 +6,42 @@
 			</tr>
 
 			<% @groups.each do |group| %>
-				<tr>
-					<td><%= link_to group.group_name, group_path(group.id) %></td>
-					<td><%= group.group_name %></td>
-					<td><%=link_to "Edit Group", edit_group_path(group.id)%></td>
-					<td><%= link_to "Destroy Group", group, confirm: "Are you sure you would like to delete your group?", method: :delete %></td>
-				</tr>
+			<tr>
+				<td><%= link_to group.group_name, group_path(group.id) %></td>
+				<td><%= group.group_name %></td>
+				<td><%=link_to "Edit Group", edit_group_path(group.id)%></td>
+				<td><%= link_to "Destroy Group", group, confirm: "Are you sure you would like to delete your group?", method: :delete %></td>
+			</tr>
+			
+			<% if Grouping.where("user_id = ? AND groups_id =?", current_user.id, group.id).empty? %>
+			<td><%=form_for (Grouping.new) do |f| %>
+				<div class = "field">
+					<% f.hidden_field :user_id, :value => current_user.id %>
+				</div>
+
+				<div class = "field">
+					<% f.hidden_field :groups_id, :value => group.id %>
+				</div>
+
+				<div class = "actions">
+					<%= f.submit "Join Group" %>
+				</div>
+				<%end%></td>
+				<%else%>
+				<td><%= button_to "Leave Group", Grouping.where("user_id = ? AND groups_id = ?", current_user.id, group.id).take!, method: :delete %></td>
+			</tr>
 			<% end %>
-		</table>
-		
+			<% end %>
+			<tr>
+				<td> User </td>
+				<td> Group </td>
+				<% Grouping.all.each do |grouping|%>
+				<tr>
+					<td> <%=grouping.user.name %></td>
+					<td><%= grouping.groups.name %></td>
+					<td><%= button_to "Leave Group", grouping, method: :delete %></td>
+				</tr>
+				<%end%>
+			</table>
+		</div>
 	</div>
-</div>
