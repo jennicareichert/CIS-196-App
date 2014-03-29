@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-# attr_writer :group_name
-after_save :assign_groups
-
 def new
   @user=User.new
 end

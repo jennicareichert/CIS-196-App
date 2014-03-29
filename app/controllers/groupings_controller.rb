@@ -1,5 +1,8 @@
 class GroupingsController < ApplicationController
-
+	def new
+		@grouping=Grouping.new
+	end
+	
 	def create
 		@grouping = Grouping.new(grouping_params)
 		if @grouping.save
