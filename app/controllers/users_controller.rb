@@ -23,6 +23,7 @@ end
 
 def show
   @user = User.find(params[:id])
+  @posts = Post.where(user_id: @user.id)
 end
 
 def edit
@@ -47,11 +48,13 @@ end
 def dash
   if user_signed_in?
     @user = current_user
-    @groupings = Grouping.where(grouping_id: current_user.id)
+    @groupings = Grouping.where(user_id: current_user.id)
+    if @groupings.empty? 
+      redirect_to groups_path
+    end
   else
     redirect_to users_path
   end
 end
-
 
 end

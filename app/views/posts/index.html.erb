@@ -1,25 +1,19 @@
 <div id="wrapper">
 	<div id="innerwrapper">
-		<table>
-			<tr>
-				<td>title</td>
-				<td>body</td>
-				<td>link</td>
-				<td>user</td>
-			</tr>
+		<div>
+			<h3><%= link_to "Make A New Post", new_post_path %></h3>
+		</div>
 
 			<% @posts.each do |post| %>
-				<tr>
-					<td><%= link_to post.title, post_path(post.id) %></td>
-					<td><%= post.title %></td>
-					<td><%= post.body %></td>
-					<td><%= post.link %></td>
-					<td><%= post.user.name unless post.user.nil? %></td>
-					<td><%=link_to "Edit Post", edit_post_path(post.id)%></td>
-					<td><%= link_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %></td>
-		 		</tr>
-			<% end %>
-			
-		</table>
+				<div class="post_index">
+					<p><%= link_to post.title, post_path(post.id) %></p>
+					<p><%= truncate(post.body, :length => 15)%> <%= link_to "(Read More)", post_path(post.id) %></p>
+					<% if !post.link.empty?%>
+						<p> <a href=<%= post.link %>> Click here</a></p>
+						<%end%>
+					<p class="small_text"> (User: <%= post.user.name unless post.user.nil? %>)</p>
+				</div>
+		 	<% end %>
+		
 	</div>
 </div>

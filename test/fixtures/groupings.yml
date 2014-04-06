@@ -2,8 +2,8 @@
 
 one:
   user_id: 
-  groups_id: 
+  group_id: 
 
 two:
   user_id: 
-  groups_id: 
+  group_id: 

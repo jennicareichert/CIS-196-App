@@ -1,8 +1,10 @@
-<h2><%= @user.name%></h2>
-
-<div>
-	<h3>Grouping</h3>
-	<% @grouping.each do |grouping| %>
-		<p><%= grouping.user.name %></p>
-	<%end%>
-</div>
+ <div id="wrapper">
+ 	<div id="innerwrapper">
+ 		<div>
+ 			<h3>My Friend Groups</h3>
+ 			<% @groupings.each do |grouping| %>
+ 			<p><%= link_to grouping.group.group_name, group_path(grouping.group_id) %></p>
+ 			<%end%>
+ 		</div>
+ 	</div>
+ </div>

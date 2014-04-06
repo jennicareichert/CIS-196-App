@@ -1,3 +1,16 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.button_to {
+	display: inline-block;
+}
+.comment_index{
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	float: none;
+	padding: 15px;
+}

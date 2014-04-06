@@ -1,6 +1,7 @@
 class Grouping < ActiveRecord::Base
   belongs_to :user
-  belongs_to :groups, :class_name => "Group"
+  belongs_to :group
 
-  validates :user_id, uniqueness: {scope: :groups_id, message: "You have already joined this grou."}
+  #validations
+  validates :user_id, uniqueness: {scope: :group_id}
 end

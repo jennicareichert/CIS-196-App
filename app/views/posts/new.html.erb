@@ -32,7 +32,8 @@
 			</div>
 
 			<div class="field">
-				<%= f.collection_select :group_id, Group.all, :id, :group_name%>
+				<p>Group</p>
+				<%= f.collection_select :group_id, @group_array, :id, :group_name %>
 			</div>
 
 			<div class = "actions">

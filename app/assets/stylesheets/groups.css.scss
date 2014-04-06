@@ -1,3 +1,31 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#text-align{
+	text-align: left;
+	padding: 15px;
+
+}
+.button_to {
+	display: inline-block;
+}
+.post{
+	border-bottom: 2px dashed white;
+}
+.comment p{
+	display: inline;
+}
+.comment{
+	position: relative;
+	left: 30px;
+}
+.group_index{
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	float: none;
+	padding: 15px;
+}

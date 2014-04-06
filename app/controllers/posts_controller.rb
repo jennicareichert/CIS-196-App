@@ -2,6 +2,12 @@ class PostsController < ApplicationController
   def new
   	if user_signed_in?
       @post=Post.new
+      @groupings = Grouping.where(user_id: current_user.id)
+      @groups = []
+      @groupings.each do |g|
+        @groups.push(g.group_id)
+      end
+      @group_array = Group.find(@groups)
     else
       redirect_to new_user_session_path
     end
@@ -16,6 +22,12 @@ class PostsController < ApplicationController
       if @post.user_id != current_user.id
         redirect_to root_path
       else 
+         @groupings = Grouping.where(user_id: current_user.id)
+          @groups = []
+          @groupings.each do |g|
+          @groups.push(g.group_id)
+      end
+       @group_array = Group.find(@groups)
         if @post.save
           redirect_to posts_path
         else

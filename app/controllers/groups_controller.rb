@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def index
   	@groups=Group.all
+    @grouping = Grouping.new
   end
 
 def create
@@ -22,6 +23,8 @@ def create
 
   def show
      @group = Group.find(params[:id])
+     @posts = Post.where(group_id: @group.id).order(created_at: :desc).limit(15)
+     #add in here the "show me more" using AJAX at the end of the semester
   end
 
  def edit

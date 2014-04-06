@@ -1,8 +1,32 @@
 <div id="wrapper">
-	<div id="innerwrapper">
-		<div>
+	<div id="text-align">
+		<div class="center">
 			<h2><%= @group.group_name%></h2>
-		<!-- ADD THE MANY TO MANY RELATIONSHIP SOON SO THAT WE CAN SEE WHICH USERS BELONG TO THIS GROUP -->
 		</div>
+
+		<% @posts.each do |post| %>
+			<div class="post_index group_index">
+				<h3><%= link_to post.title, post_path(post.id) %></h3>
+				<p><%= post.body %></p>
+				<p><%= post.link %></p>
+				<p class="small_text">(User: <%= post.user.name unless post.user.nil? %>)</p>
+				
+				<% if !Comment.where(post_id: post.id).empty? %>
+					<p>Comments:</p>
+						<% Comment.where(post_id: post.id).each do |comment| %>
+							<div class="comment">
+								<p>---<%= comment.body unless comment.body.nil? %></p>
+								<p class="small_text">(User:<%= comment.user.name unless comment.user.nil? %>)</p>
+							</div>
+							<%end%>
+					<%end%>
+
+					<div>
+						<%= button_to "Edit Post", edit_post_path(post.id), method: :get %>
+						<%= button_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %>
+						<%= button_to "Leave a Comment", new_comment_path, method: :get %>
+					</div>
+			</div>
+		<% end %>
 	</div>
 </div>

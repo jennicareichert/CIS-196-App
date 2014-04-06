@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324160811) do
+ActiveRecord::Schema.define(version: 20140331231055) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -24,24 +24,14 @@ ActiveRecord::Schema.define(version: 20140324160811) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "followers", force: true do |t|
-    t.integer  "follower_id"
-    t.integer  "followee_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "followers", ["followee_id"], name: "index_followers_on_followee_id"
-  add_index "followers", ["follower_id"], name: "index_followers_on_follower_id"
-
   create_table "groupings", force: true do |t|
     t.integer  "user_id"
-    t.integer  "groups_id"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "groupings", ["groups_id"], name: "index_groupings_on_groups_id"
+  add_index "groupings", ["group_id"], name: "index_groupings_on_group_id"
   add_index "groupings", ["user_id"], name: "index_groupings_on_user_id"
 
   create_table "groups", force: true do |t|
@@ -67,7 +57,6 @@ ActiveRecord::Schema.define(version: 20140324160811) do
     t.string   "name"
     t.string   "password"
     t.string   "phone"
-    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
@@ -83,7 +72,6 @@ ActiveRecord::Schema.define(version: 20140324160811) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["group_id"], name: "index_users_on_group_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

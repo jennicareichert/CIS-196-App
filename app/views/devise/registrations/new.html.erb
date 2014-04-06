@@ -20,11 +20,6 @@
 			<%= f.text_field :phone%>
 		</div>
 
-		<div class="field">
-			<p>Group</p>
-			<%= f.collection_select :group_id, Group.all, :id, :group_name%>
-		</div>
-
 		<div class="password">
 			<p>Password</p>
 			<%= f.password_field :password %>
