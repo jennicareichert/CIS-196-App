@@ -1,12 +1,15 @@
 <div id="wrapper">
 	<div id="innerwrapper">
-		
-		<div>
-			<h2><%= @post.title%></h2>
-			<p><%= @post.body %></p>
-			<p><%= @post.link %></p>
-			<p class="small_text">(User: <%= @post.user.name %>)</p>
-		</div>
+		<div class="post_index comment_index post_show">
+			<h2 class="center"><%= @post.title %></h2>
+			<p class="center"><%= @post.body%></p>
+			<p class ="center"><%= @post.link %></p>
+			<p class="small_text center">(User:<%= @post.user.name %>)</p>
+			<p>Comment:</p>
+
+			<div class="comment">
+				<!-- ADD COMMENTS THAT ARE LINKED TO POSTS HERE -->
+			</div>
 
 	</div>
 </div>
