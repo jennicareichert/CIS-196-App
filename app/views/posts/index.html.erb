@@ -3,15 +3,21 @@
 		<div>
 			<h3><%= link_to "Make A New Post", new_post_path %></h3>
 		</div>
-
-			<% @posts.each do |post| %>
+			<% Post.order(group_id: :asc, created_at: :desc).each do |post| %>
 				<div class="post_index">
-					<p><%= link_to post.title, post_path(post.id) %></p>
+					<h4><%= link_to post.title, post_path(post.id) %></h4>
 					<p><%= truncate(post.body, :length => 15)%> <%= link_to "(Read More)", post_path(post.id) %></p>
+					
 					<% if !post.link.empty?%>
-						<p> <a href=<%= post.link %>> Click here</a></p>
-						<%end%>
-					<p class="small_text"> (User: <%= post.user.name unless post.user.nil? %>)</p>
+						<a href=<%= post.link %>> Click here</a>
+					<%end%>
+					
+					<p class="small_text"> (Group: <%= Group.where(id: post.group_id).take!.group_name %>) | (User: <%= post.user.name unless post.user.nil? %>)</p>
+				
+					<div>
+						<%= button_to "Edit Post", edit_post_path(post.id), method: :get %>
+						<%= button_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %>
+					</div>
 				</div>
 		 	<% end %>
 		

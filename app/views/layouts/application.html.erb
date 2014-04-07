@@ -9,24 +9,25 @@
 <body>
 <div class="navbar">
 	<ul class="nav">
+				<% if !user_signed_in? %>
+					<li> | 	<%= link_to 'Login', new_user_session_path %> | </li>
+				<% else %>
+					<li> | <%= link_to 'Logout', destroy_user_session_path, :method => :delete %> | </li>
+					
+					<li> | <%= link_to "Edit Account", edit_user_registration_path %> | </li>
 
-			<% if !user_signed_in? %>
-				<li><%= link_to 'Login', new_user_session_path %> </li>
-			<% else %>
-				<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-				
-				<li><%= link_to "Edit Account", edit_user_registration_path %></li>
+					<li> | <%= link_to "Groups", groups_path %> | </li>
 
-				<li><%= link_to "New Group", new_group_path %></li>
+					<li> | <%= link_to "Comments", comments_path %> | </li>
 
-				<li><%= link_to "Comment", new_comment_path %></li>
+					<li> | <%= link_to "Posts", posts_path %> | </li>
 
-				<li><%= link_to "Post", new_post_path %></li>
+				<% end %>
+			<div>
+		<ul class= "dashboard">
+			<li><%= link_to "HOME", root_path %></li>
+		</ul>
 
-			<% end %>
-
-			<li><%= link_to "Home", root_path %></li>
-		</div>
 	</ul> 
 </div>
 

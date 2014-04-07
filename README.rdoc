@@ -188,6 +188,7 @@ http://enigmatic-river-3353.herokuapp.com/
 		(10) Make the "Leave a comment" link on the posts page be specifically a linked comment to that particular post
 		(11) Allow user groups to set their own group background (similar to how I have now)
 		(12) Add in to groups.controller.rb the "show me more" using AJAX to see more than 15 posts
+		(13) Add search bar to the navigation & shift "Dashboard" to float left
 	
 4/6/14
 	HOMEWORK #9:

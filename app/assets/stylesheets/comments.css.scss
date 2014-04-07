@@ -4,13 +4,18 @@
 
 .button_to {
 	display: inline-block;
+	margin: 10px;
+	vertical-align: bottom;
+	margin-right: auto;
+	margin-left: auto;
 }
 .comment_index{
 	height: auto;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	display: block;
-	float: none;
-	padding: 15px;
+	display: inline-block;
+	float: left;
+	padding: 10px;
+	margin: 8px;
 }

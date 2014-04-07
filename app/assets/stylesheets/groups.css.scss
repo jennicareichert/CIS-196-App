@@ -25,7 +25,9 @@
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	display: block;
-	float: none;
+	display: inline-block;
+	float: left;
 	padding: 15px;
+	margin: 11px;
 }
+

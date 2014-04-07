@@ -21,11 +21,13 @@ body{
  		font-family: helvetica;
  		color: white;
  	}
+
  .small_text{
  	font-size: 12px;
  }
+ 
  .center{
- 		text-align: center;
+ 	text-align: center;
  }
  	
 .nav{
@@ -42,15 +44,14 @@ body{
 	background-color:#0A0000;
 	opacity: 0.55;
 	z-index:1;
-	
 }
 
 .nav li{
 	display: inline;	
 	list-style-type: none;
 
-	padding-right:25px;
-	padding-left: 10px;
+	padding-right:20px;
+	padding-left: 8px;
 	padding-top:20px;
 	padding-bottom: 20px;
 	
@@ -58,6 +59,18 @@ body{
 	text-align: right;
 	color:rgb(255, 163, 248);
 }
+.dashboard{
+	float: left;
+	text-decoration: bold;
+	font-size: 18px;
+	color:rgb(255, 163, 248);
+	vertical-align: center;
+
+	border:3px;
+	border-color: white;
+	background-color: white;
+}
+
 #content{
 	position:absolute;
 	width:100%;
@@ -124,6 +137,7 @@ a:active {
 #devise{
 	padding: 25px;
 }
+
 .post_index{
 	border: 2px solid white;
 	width: 375px;
@@ -132,3 +146,11 @@ a:active {
 	float: left;
 	margin: 11px;
 }
+
+.button_to {
+	display: inline-block;
+	margin: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
