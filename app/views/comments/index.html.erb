@@ -8,9 +8,9 @@
 			<% Comment.order(post_id: :asc, created_at: :desc).each do |comment| %>
 				
 				<div class="post_index comment_index">
-					<h4><%= comment.post.title unless comment.post.nil? %></h4>
+					<h4><%= comment.post.title %></h4>
 					<p><%= truncate(comment.body, :length => 15)%> <%= link_to "(Read More)", comment_path(comment.id) %></p>
-					<p class="small_text"> (Group: <%= Group.where(id: comment.post.group_id).take!.group_name %>) | (User: <%= comment.user.name unless comment.user.nil? %>)</p>
+					<p class="small_text"> (Group: <%= Group.where(id: comment.post.group_id).take!.group_name %>) | (Comment posted by: <%= comment.user.name unless comment.user.nil? %>)</p>
 					
 					<div>
 						<%= button_to "Edit Comment", edit_comment_path(comment.id), method: :get %>

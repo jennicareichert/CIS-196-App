@@ -1,25 +1,28 @@
 <div id="wrapper">
 	<div id="innerwrapper">
+
 		<div>
 			<h3><%= link_to "Make A New Post", new_post_path %></h3>
 		</div>
-			<% Post.order(group_id: :asc, created_at: :desc).each do |post| %>
-				<div class="post_index">
-					<h4><%= link_to post.title, post_path(post.id) %></h4>
-					<p><%= truncate(post.body, :length => 15)%> <%= link_to "(Read More)", post_path(post.id) %></p>
-					
-					<% if !post.link.empty?%>
-						<a href=<%= post.link %>> Click here</a>
-					<%end%>
-					
-					<p class="small_text"> (Group: <%= Group.where(id: post.group_id).take!.group_name %>) | (User: <%= post.user.name unless post.user.nil? %>)</p>
+
+		<% Post.order(group_id: :asc, created_at: :desc).each do |post| %>
+			<div class="post_index">
+				<h4><%= link_to post.title, post_path(post.id) %></h4>
+				<p><%= truncate(post.body, :length => 15)%> <%= link_to "(Read More)", post_path(post.id) %></p>
 				
-					<div>
-						<%= button_to "Edit Post", edit_post_path(post.id), method: :get %>
-						<%= button_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %>
-					</div>
+				<% if !post.link.empty?%>
+					<a href=<%= post.link %>> Click here</a>
+				<%end%>
+					
+				<p class="small_text"> (Group: <%= Group.where(id: post.group_id).take!.group_name unless post.group_id.nil? %>) | (User: <%= post.user.name unless post.user.nil? %>)</p>
+				
+				<div>
+					<%= button_to "Edit Post", edit_post_path(post.id), method: :get %>
+					<%= button_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %>
+					<%= button_to "Leave a Comment", new_comment_path, method: :get %>
 				</div>
-		 	<% end %>
+			</div>
+		<% end %>
 		
 	</div>
 </div>

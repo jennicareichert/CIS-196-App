@@ -1,9 +1,15 @@
 <div id="wrapper">
 	<div id="innerwrapper">
-		<div>
-			<h2><%= @comment.body%></h2>
-			<p><%= @comment.post.title %></p>
-			<p><%= @comment.user.name %></p>
+		<div class="post_index comment_index comment_show">
+			<h2 class="center"><%= @comment.post.title %></h2>
+			<p class="center"><%= @comment.post.body%></p>
+			<p>Comment:</p>
+
+			<div class="comment">
+				<p>---<%= @comment.body%></p>
+				<p class="small_text">(User:<%= @comment.user.name %>)</p>
+			</div>
+			
 		</div>
 	</div>
 </div>

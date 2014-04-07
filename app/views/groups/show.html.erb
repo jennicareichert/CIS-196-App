@@ -5,7 +5,7 @@
 		</div>
 
 		<% @posts.each do |post| %>
-			<div class="post_index group_index">
+			<div class="post_index group_index group_show">
 				<div class ="center">
 					<h3><%= link_to post.title, post_path(post.id) %></h3>
 					<p><%= post.body %></p>
