@@ -225,9 +225,7 @@ a:active {
 	border-radius: 4px;
 	    
 }
-.hide{
-	display: none;
-}
+
 .left{
 	float: left;
 	display: inline;	
@@ -265,7 +263,6 @@ a:active {
 }
 
 .nav .dropdown{
-	display: table-cell;
 	vertical-align: center;
 }
 
@@ -290,3 +287,6 @@ a:active {
 	z-index:12;
 }
 
+.hide{
+	display: none;
+}
