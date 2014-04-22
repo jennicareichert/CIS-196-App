@@ -7,9 +7,34 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def search
+      case params[:type]
+        when "title", "body"
+          @posts = Post.where(params[:type] + " LIKE ?", "%"+params[:search]+"%")
+          render'posts/index'
+
+        when "name"
+          @users = User.where(params[:type] + " LIKE ?", "%"+params[:search]+"%")
+          render 'users/index'
+
+        when "group_name"
+           @groups = Group.where(params[:type] + " LIKE ?", "%"+params[:search]+"%")
+          render'groups/index'
+
+        when "comment_body"
+           @comments = Comment.where("body" + " LIKE ?", "%"+params[:search]+"%")
+          render'comments/index'
+
+      else
+        render 'home/index'
+      end
+    end 
+
   protected
   	def configure_permitted_parameters
   		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :name, :phone, :password, :password_confirmation) }
   		devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :name, :phone, :password, :password_confirmation, :current_password) }
   	end
+
+    
 end

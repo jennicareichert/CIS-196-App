@@ -1,15 +1,54 @@
 <div id="wrapper">
 	<div id="innerwrapper">
 		<div class="post_index comment_index post_show">
-			<h2 class="center"><%= @post.title %></h2>
+			<p class="title center"><%= @post.title %></p>
 			<p class="center"><%= @post.body%></p>
-			<p class ="center"><%= @post.link %></p>
-			<p class="small_text center">(User:<%= @post.user.name %>)</p>
-			<p>Comment:</p>
+			<p class ="center">
+				<% if !@post.link.empty?%>
+					<%= link_to "Shared link!", @post.link %>
+				<%end%></p>
+			<p class="small_text center">(<%= @post.user.name %>)</p>
 
+	
 			<div class="comment">
-				<!-- ADD COMMENTS THAT ARE LINKED TO POSTS HERE -->
+				<% @comments.each do |comment| %>
+				<div>
+					<p>---<%= comment.body  %></p>
+					<p class="small_text center">(<%= comment.user.name %>)</p>
+				</div>
+				<%end%>
 			</div>
+
+			<div class = "comment_form">
+				<div class="error-msg">
+				<% if @new_comment.errors.any? %>
+				<ul>
+					<% @new_comment.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+				<% end %>
+			</div>
+
+			<%= form_for(@new_comment) do|f| %>
+				<div class="field">
+					<%= f.hidden_field :post_id, :value => @post.id %>
+				</div>
+				
+				<div class="field">
+					<%= f.text_field :body, :placeholder => "New Comment" %>
+				</div>
+
+				<div class="field">
+					<%= f.hidden_field :user_id, :value =>current_user.id %>
+				</div>
+
+				<div class = "actions">
+					<%= f.submit %>
+				</div>
+
+			<% end %>
+		</div>
 
 	</div>
 </div>

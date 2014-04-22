@@ -1,14 +1,15 @@
 <div id="wrapper">
 	<div id="innerwrapper">
 		<div>
-			<h3><%= link_to "Create a New Group", new_group_path %></h3>
+			<h3 class = "italics"><%= link_to "Create a New Group", new_group_path %></h3>
 		</div>
 
 			<% @groups.each do |group| %>
 				
 				<div class="post_index group_index">
-					<p><%= link_to group.group_name, group_path(group.id) %></p>
-					<p><% if Grouping.where("user_id = ? AND group_id =?", current_user.id, group.id).empty? %>
+					<p class="title"><%= link_to group.group_name, group_path(group.id) %></p>
+					
+					<% if Grouping.where("user_id = ? AND group_id =?", current_user.id, group.id).empty? %>
 						<td><%=form_for (@grouping) do |f| %>
 							<div class = "field">
 								<%= f.hidden_field :user_id, :value => current_user.id %>
@@ -25,9 +26,8 @@
 						<%else%>
 							<%= button_to "Leave Group", Grouping.where("user_id = ? AND group_id = ?", current_user.id, group.id).take!, method: :delete %>
 						<% end %>
-						</p>
-					
-					<%= button_to "Edit Group", edit_group_path(group.id)%>
+	
+					<%= button_to "Edit Group", edit_group_path(group.id), method: :get %>
 					<%= button_to "Destroy Group", group, confirm: "Are you sure you would like to delete your group?", method: :delete %>
 				</div>
 		 	<% end %>

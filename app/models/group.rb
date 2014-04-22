@@ -2,6 +2,7 @@ class Group < ActiveRecord::Base
 
 belongs_to :user
 has_many :groupings, :dependent => :destroy
+has_many :posts, :dependent => :destroy
 
 #validations
 validates :group_name, presence: true

@@ -6,7 +6,8 @@ App::Application.routes.draw do
  resources :posts
  resources :comments
  
-get "dashboard", to: "users#dash"  
+get "dashboard", to: "users#dash" 
+get "search", to: "application#search"
 
  root 'users#dash'
 

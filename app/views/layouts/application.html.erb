@@ -7,38 +7,41 @@
 </head>
 
 <body>
-<div class="navbar">
-	<ul class="nav">
-				<% if !user_signed_in? %>
-					<li> | 	<%= link_to 'Login', new_user_session_path %> | </li>
-				<% else %>
-					<li> | <%= link_to 'Logout', destroy_user_session_path, :method => :delete %> | </li>
-					
-					<li> | <%= link_to "Edit Account", edit_user_registration_path %> | </li>
+	<div class="navbar">
+		<ul class="nav">
+			<% if user_signed_in? %>
+				<li> | <%= link_to 'Logout', destroy_user_session_path, :method => :delete %> | </li>
+				<li> | <%= link_to "Edit Account", edit_user_registration_path %> | </li>
+				<li>
+					<%= form_tag search_path, method: :get do %>
+						<%= text_field_tag :search %>
+						<%= select_tag(:type, options_for_select([['Posts', "body"], ['Titles', "title"], ['Comments', "comment_body"], ["Users", "name"], ['Groups', 'group_name']]))%>
+						<%= submit_tag "Search" %>
+					<%end%>
+				</li>
+			<% end %>
+			
+			<ul class= "dashboard">
+					<% if user_signed_in? %>
+						<li> | <%= link_to "Comments", comments_path %> | </li>
+						<li> | <%= link_to "Posts", posts_path %> | </li>
+						<li> | <%= link_to "Groups", groups_path %> | </li>
+						<li> | <%= link_to "HOME", root_path %> | </li>
+					<% end %>
+			</ul>
+		</ul> 
+	</div>
 
-					<li> | <%= link_to "Groups", groups_path %> | </li>
-
-					<li> | <%= link_to "Comments", comments_path %> | </li>
-
-					<li> | <%= link_to "Posts", posts_path %> | </li>
-
-				<% end %>
-			<div>
-		<ul class= "dashboard">
-			<li><%= link_to "HOME", root_path %></li>
-		</ul>
-
-	</ul> 
-</div>
+	<div class = "messages">
+		<p class="notice"><%= notice %></p>
+		<p class = "alerts"><%= alert %></p>
+	</div>
 
 
-<p class="notice"><%= notice %></p>
-<p class = "alerts"><%= alert %></p>
-
-
-<div id="content"> <%= yield %></div>
+	<div id="content"> <%= yield %></div>
 
 </body>
+
 </html>
 
 

@@ -2,15 +2,15 @@
 	<div id="innerwrapper">
 		
 		<div>
-			<h3><%= link_to "Make A New Comment", new_comment_path %></h3>
+			<h3 class="italics"><%= link_to "Make A New Comment", new_comment_path %></h3>
 		</div>
 			
 			<% Comment.order(post_id: :asc, created_at: :desc).each do |comment| %>
 				
 				<div class="post_index comment_index">
-					<h4><%= comment.post.title %></h4>
+					<p class="title"><%= link_to comment.post.title, comment_path(comment.id) %></p>
 					<p><%= truncate(comment.body, :length => 15)%> <%= link_to "(Read More)", comment_path(comment.id) %></p>
-					<p class="small_text"> (Group: <%= Group.where(id: comment.post.group_id).take!.group_name %>) | (Comment posted by: <%= comment.user.name unless comment.user.nil? %>)</p>
+					<p class="small_text"> (<%= Group.where(id: comment.post.group_id).take!.group_name %>) | (<%= comment.user.name unless comment.user.nil? %>)</p>
 					
 					<div>
 						<%= button_to "Edit Comment", edit_comment_path(comment.id), method: :get %>

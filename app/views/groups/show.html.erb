@@ -7,17 +7,19 @@
 		<% @posts.each do |post| %>
 			<div class="post_index group_index group_show">
 				<div class ="center">
-					<h3><%= link_to post.title, post_path(post.id) %></h3>
+					<p class="title"><%= link_to post.title, post_path(post.id) %></p>
 					<p><%= post.body %></p>
-					<p><%= post.link %></p>
-					<p class="small_text">(User: <%= post.user.name unless post.user.nil? %>)</p>
+					<p class ="center"><% if !post.link.empty?%>
+						<%= link_to "Click Here!", post.link %>
+						<%end%></p>
+					<p class="small_text">(<%= post.user.name unless post.user.nil? %>)</p>
 				</div>
 					<% if !Comment.where(post_id: post.id).empty? %>
 						<p>Comments:</p>
 							<% Comment.where(post_id: post.id).each do |comment| %>
 								<div class="comment">
 									<p>---<%= comment.body unless comment.body.nil? %></p>
-									<p class="small_text">(User:<%= comment.user.name unless comment.user.nil? %>)</p>
+									<p class="small_text">(<%= comment.user.name unless comment.user.nil? %>)</p>
 								</div>
 								<%end%>
 						<%end%>

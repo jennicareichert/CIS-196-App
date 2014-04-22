@@ -18,7 +18,7 @@ def create
       else 
         if @comment.save
             Notifications.new_comment(@comment).deliver
-          redirect_to comments_path
+          redirect_to post_path(@comment.post.id)
         else 
           render 'new'
         end 
