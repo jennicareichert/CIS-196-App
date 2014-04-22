@@ -198,7 +198,8 @@ http://enigmatic-river-3353.herokuapp.com/
 
 4/21/14
 	HOMEWORK #10:
-		Inserted JavaScript into ...
+		Inserted JavaScript into ... 
+		application.js ---- does dyanmic resizing as the window size changes for the for height of #wrapper and the width of my nav bar. (CSS for the new respacing of the nav bar not yet finished, but the jquery works to resize as the window changes)
 		
 		
 
