@@ -186,6 +186,8 @@ http://enigmatic-river-3353.herokuapp.com/
 		(13) show groupings on the users index page
 		(14) Links don't have to be there on posts
 		(15) search for body on posts and comments
+		(16) whole nav bar shifts when screen is resized
+		(17) default alerts & notices turned off for devise
 		
 	
 4/6/14
