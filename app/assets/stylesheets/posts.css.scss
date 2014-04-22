@@ -29,49 +29,4 @@ h4{
 	text-align: center;
 	border-radius: 5px;
 }
-.dropdown{
-	list-style:none;
-	margin-right: 0	;
-	text-align: left;
-	padding: 0;
-	vertical-align: top;
-	position: relative;
-	width: 40px;
-	font-size: 11px;
- }
-.dropdown a{
-    display:block;
-    color:rgb(29, 26, 119);
-	background-color:rgba(240, 185, 235, 0.55);
-	padding: 5px;
-	border-radius: 4px;
-	    
-}
-.dropdown a:hover{
-    color:white;
-	text-decoration: underline;
-}
-.dropdown ul{
-    list-style:none;
-    position:absolute;
-    left: 280px;
-}
-.dropdown li{
-	padding: 0px;
-}
 
-.dropdown ul ul{
-	display: none;
-	float:left;
-	position: absolute;
-	left: 0;
-}
-.dropdown ul ul li{
-	margin: 2px;
-}
-.dropdown ul a{
-    white-space:nowrap; 
-}
-.dropdown:hover ul {
-	display: block;
-}

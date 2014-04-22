@@ -100,6 +100,7 @@ body{
 	color:rgb(29, 26, 119);
 }
 
+
 .dashboard{
 	float: left;
 	display: inline;	
@@ -111,6 +112,7 @@ body{
 	position:absolute;
 	width:100%;
 	top: 75px;
+	z-index: 0;
 
 }
 .nav a:link {
@@ -167,6 +169,7 @@ a:active {
 	margin-right: 2%;
 	margin-bottom: 2%;
 	overflow-x: auto;
+	z-index: 0;
 
 }
 
@@ -179,6 +182,7 @@ a:active {
 	float:middle;
 	vertical-align: middle;
 	padding: 15px;
+	z-index: 0;
 
 }
 
@@ -190,7 +194,7 @@ a:active {
 	border: 1px solid rgb(29, 26, 119);
 
 	width: 375px;
-	height: 100%;
+	height: auto;
 	display: inline-block;
 	float: left;
 	margin: 11px;
@@ -203,5 +207,86 @@ a:active {
 	margin-right: auto;
 	margin-left: auto;
 }
+.dropdown{
+	list-style:none;
+	margin-right: 0	;
+	text-align: left;
+	padding: 0;
+	vertical-align: top;
+	position: relative;
+	width: 40px;
+	font-size: 11px;
+ }
+.dropdown a{
+    display:block;
+    color:rgb(29, 26, 119);
+	background-color:rgba(240, 185, 235, 0.55);
+	padding: 5px;
+	border-radius: 4px;
+	    
+}
+.hide{
+	display: none;
+}
+.left{
+	float: left;
+	display: inline;	
+	list-style-type: none;
+	text-align: left;	
+}
 
+.dropdown a:hover{
+    color:white;
+	text-decoration: underline;
+}
+.dropdown ul{
+    list-style:none;
+    position:absolute;
+    left: 280px;
+}
+.dropdown li{
+	padding: 0px;
+}
+
+.dropdown ul ul{
+	display: none;
+	float:left;
+	position: absolute;
+	left: 0;
+}
+.dropdown ul ul li{
+	margin: 2px;
+}
+.dropdown ul a{
+    white-space:nowrap; 
+}
+.dropdown:hover ul {
+	display: block;
+}
+
+.nav .dropdown{
+	display: table-cell;
+	vertical-align: center;
+}
+
+.nav .dropdown a{
+	float: left;
+	background-color: transparent;
+	vertical-align: middle;
+/*	padding-top:20px;
+*/	padding-bottom: 20px;
+	font-size: 11px;
+	margin:20px;
+}
+
+.nav .dropdown ul{
+	left: 0px;
+}
+
+.nav .dropdown li {
+	position: relative;
+	
+	text-align: left;
+	z-index:12;
+}
 

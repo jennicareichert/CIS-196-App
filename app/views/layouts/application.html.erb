@@ -21,14 +21,32 @@
 				</li>
 			<% end %>
 			
+					
 			<ul class= "dashboard">
 					<% if user_signed_in? %>
-						<li> | <%= link_to "Comments", comments_path %> | </li>
-						<li> | <%= link_to "Posts", posts_path %> | </li>
-						<li> | <%= link_to "Groups", groups_path %> | </li>
-						<li> | <%= link_to "HOME", root_path %> | </li>
+						<li><%= link_to "Comments", comments_path %></li>
+						<li><%= link_to "Posts", posts_path %></li>
+						<li><%= link_to "Groups", groups_path %></li>
+						<li><%= link_to "HOME", root_path %></li>
+
 					<% end %>
 			</ul>
+
+			<div class="dropdown hide">
+				<% if user_signed_in? %>
+						<li><%= link_to "HOME", root_path %></li><ul>
+							
+							<li><a href="#">Options</a>
+								<ul>
+									<li><%= link_to "Comments", comments_path %></li>
+									<li><%= link_to "Posts", posts_path %></li>
+									<li><%= link_to "Groups", groups_path %></li>
+								</ul>
+							</li>
+						</ul>
+						<%end%>
+			</div>
+
 		</ul> 
 	</div>
 
