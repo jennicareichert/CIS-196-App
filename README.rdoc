@@ -188,7 +188,11 @@ http://enigmatic-river-3353.herokuapp.com/
 		(15) search for body on posts and comments
 		(16) whole nav bar shifts when screen is resized
 		(17) default alerts & notices turned off for devise
-		
+		(18) database of images only "image show"
+		(19) make sure it looks good on multiple browsers
+		(20) posts show not working on heroku
+		(21) new posts not working on heroku
+
 	
 4/6/14
 	HOMEWORK #9:
