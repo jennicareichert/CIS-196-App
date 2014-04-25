@@ -1,3 +1,10 @@
+<head>
+<!-- The best place for this one is your <HEAD> tag -->
+	<script>UPLOADCARE_PUBLIC_KEY = "2ed8133e2769b7f5a93b";</script>
+	<script src="https://ucarecdn.com/widget/1.0.1/uploadcare/uploadcare-1.0.1.min.js" charset="utf-8"></script>
+</head>
+
+<body>
 <div id="wrapper">
 	<div id="innerwrapper">
 		
@@ -27,6 +34,11 @@
 				<%= f.text_field :link%>
 			</div>
 
+			<div class ="field">
+				<p>Upload Content</p>
+    			<%= f.uploadcare_field :file %>
+			</div>
+			
 			<div class="field">
 				<%= f.hidden_field :user_id, :value =>current_user.id %>
 			</div>
@@ -44,3 +56,4 @@
 
 	</div>
 </div>
+</body>

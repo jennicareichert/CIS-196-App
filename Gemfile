@@ -14,6 +14,9 @@ end
 
 gem 'devise', '3.0'
 
+gem 'uploadcare-rails', "~> 1.0"
+#file uploads
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

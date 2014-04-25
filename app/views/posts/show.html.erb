@@ -7,6 +7,7 @@
 				<% if !@post.link.empty?%>
 					<%= link_to "Shared link!", @post.link %>
 				<%end%></p>
+			<p class ="center files"><%= image_tag(@post.file)%></p>
 			<p class="small_text center">(<%= @post.user.name %>)</p>
 
 	
