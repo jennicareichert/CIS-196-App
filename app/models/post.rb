@@ -9,10 +9,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, length: {minimum: 5}
 
-  # validates :link, :presence => {:message => "Your link has been saved."},
- 	# 		:link => true, 
- 	# 			:if => Proc.new {|c| not c.link.blank?},
- 	# 			:format => { with:linkFormatValidation => false}
- 	
+validates :link, format: {with:linkFormatValidation}, :unless => Proc.new {|c| c.link.blank?}
+	
  
 end

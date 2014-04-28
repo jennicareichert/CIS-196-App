@@ -35,10 +35,12 @@ body{
  
  #content input[type=submit]{
 	background-color:rgba(240, 185, 235, 0.55);
-	opacity: 0.70;
-	z-index:1;
 	color:rgb(29, 26, 119);
  }
+  #content input[type=submit]:hover{
+ 	color: rgb(94, 86, 86) !important;
+	text-decoration: underline !important;	
+}
  .title{
  	font-size: 30px;
  	text-transform: uppercase;
@@ -109,10 +111,10 @@ body{
 }
 
 #content{
-	position:absolute;
+	position:relative;
 	width:100%;
-	top: 75px;
-	z-index: 0;
+	top: 15px;
+	z-index: 1;
 
 }
 .nav a:link {
@@ -164,7 +166,7 @@ a:active {
 
 
 	position: absolute;
-	top:30px;
+	top:53px;
 	margin-left: 2%;
 	margin-right: 2%;
 	margin-bottom: 2%;
@@ -201,7 +203,6 @@ a:active {
 
 .button_to {
 	display: block;
-
 	margin: 5px;
 	margin-right: auto;
 	margin-left: auto;
@@ -260,28 +261,54 @@ a:active {
 .dropdown:hover ul {
 	display: block;
 }
-
+#option-drop{
+	position:relative;
+	top:-20px;
+	z-index: 100;
+}
 .nav .dropdown{
 	vertical-align: center;
 }
 
-.nav .dropdown a{
+.nav .dropdown .options a{
+	position: relative;
+	z-index: 100;
 	float: left;
 	background-color: transparent;
 	vertical-align: middle;
-/*	padding-top:20px;
-*/	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 	font-size: 11px;
 	margin:20px;
+}
+.nav .dropdown .drop a{
+	position: relative;
+	white-space: nowrap;
+	z-index: 100;
+	float: right;
+	background-color: transparent;
+	vertical-align: middle;
+	padding:5px;
+	font-size: 11px;
+	margin:1px;
+	display: block;
+	background-color: rgba(240, 185, 235, 0.55);
+	border-radius: 4px;
+}
+.nav .dropdown .drop a:hover{
+	color:rgb(94, 86, 86);
+}
+.nav .dropdown .drop a {
 }
 
 .nav .dropdown ul{
 	left: 0px;
 }
+.nav .dropdown a{
+	display: block;
+}
 
 .nav .dropdown li {
 	position: relative;
-	
 	text-align: left;
 	z-index:12;
 }
@@ -289,3 +316,5 @@ a:active {
 .hide{
 	display: none;
 }
+
+

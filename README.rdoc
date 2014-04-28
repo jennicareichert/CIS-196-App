@@ -177,21 +177,17 @@ http://enigmatic-river-3353.herokuapp.com/
 	Also can't seem to understand how to create the user dashboard.  Probably isn't working b/c the groupings aren't working yet too.  Need to edit: users_controll (Dash) and the views/users/show.html.erb
 
 	Problems to fix:
-		(2) Add Filepicker gem install 
-		(3) Add Twilio (SMS texting notificaitons) gem install
 		(8) Invite people (current or new users) to join a group
 		(9) Group privacy -- can't join without a validation from an existing member
 		(11) Allow user groups to set their own group background (similar to how I have now)
 		(12) Add in to groups.controller.rb the "show me more" using AJAX to see more than 15 posts
 		(13) show groupings on the users index page
-		(14) Links don't have to be there on posts
 		(15) search for body on posts and comments
 		(16) whole nav bar shifts when screen is resized
 		(17) default alerts & notices turned off for devise
 		(18) database of images only "image show"
 		(19) make sure it looks good on multiple browsers
-		(20) posts show not working on heroku
-		(21) new posts not working on heroku
+		(20) fix the search bar -- can't search body for posts & comments, can't search groups if there are no users
 
 	
 4/6/14
