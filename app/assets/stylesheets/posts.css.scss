@@ -31,37 +31,5 @@ h4{
 	text-align: left;
 	float: center;
 }
-.comment_form{
-	margin: 8px;
-}
-.comment_form input[type=text]{
-	width: 350px;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	border-radius: 5px;
-}
-.uploadcare-widget-button-open{
-	margin-bottom: 8px !important;
-	margin-top: 5px !important;
-	background-color: rgba(240, 185, 235, 0.55) !important;
-	color:#1d1a77 !important;
-	border-radius: 1px !important;
-	font-family: "Utopia","Georgia",serif !important;
-	border-radius: 2px !important;
-	border-color: rgba(240, 185, 235, 0.55) !important;
-}
-.uploadcare-widget-button-open:hover{
-	color: rgb(94, 86, 86) !important;
-	text-decoration: underline !important;	
-}
-.files > img{
-	width: 100%;
-/*	height:50px !important;
-*/	max-width: 100% !important;
-	border-radius: 5px !important;
-
-}
 
 

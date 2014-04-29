@@ -2,7 +2,7 @@
 	<div id="innerwrapper">
 		
 		<div>
-			<h3 class="italics"><%= link_to "Make A New Comment", new_comment_path %></h3>
+			<h3 class="italics center name2"><%= link_to "Make A New Comment", new_comment_path %></h3>
 		</div>
 			
 			<% Comment.order(post_id: :asc, created_at: :desc).each do |comment| %>

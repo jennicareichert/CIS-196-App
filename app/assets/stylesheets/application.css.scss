@@ -18,7 +18,7 @@ body{
  		background-size: cover;
  		background-position: center center;
  		background-image: fixed;
-*/ 		font-family: "Utopia","Georgia",serif;
+*/ 			
  		color: rgb(94, 86, 86);
  		background-color:white;
  		margin: 0;
@@ -32,6 +32,32 @@ body{
  .small_text{
  	font-size: 10px;
  }
+ @font-face{
+ 	font-family: 'bird';
+ 	src: url('bird.ttf') format('truetype');
+ }
+ 
+ .name{
+ 	font-family: 'bird', Fallback, sans-serif;
+ 	font-size: 100px;
+ 	padding: 5px;
+ 	margin: 0;
+ 	text-transform: uppercase;
+ 	color: rgb(29, 26, 119);
+ }
+  .name2{
+ 	font-family: 'bird', Fallback, sans-serif;
+ 	font-size: 50px;
+ 		padding: 5px;
+ 	margin: 0;
+ 	text-decoration: bold;
+ 	color: rgb(94, 86, 86);
+ }
+ .title{
+ 	font-size: 30px;
+ 	text-transform: uppercase;
+ 	color: #040077;
+ }
  
  #content input[type=submit]{
 	background-color:rgba(240, 185, 235, 0.55);
@@ -41,17 +67,13 @@ body{
  	color: rgb(94, 86, 86) !important;
 	text-decoration: underline !important;	
 }
- .title{
- 	font-size: 30px;
- 	text-transform: uppercase;
- 	color: rgb(29, 26, 119);
- }
+
  .title a:link{
- 	color:rgb(29, 26, 119);
+ 	color:#040077;
  }
  
  .title a:visited{
- 	color:rgb(29, 26, 119);
+ 	color:#040077;
  }
  .title a:hover{
  	color:rgba(240, 185, 235, 0.55);
@@ -89,8 +111,8 @@ body{
 	display: inline;	
 	list-style-type: none;
 
-	padding-right:20px;
-	padding-left: 8px;
+	padding-right:15px;
+	padding-left: 10px;
 	padding-top:20px;
 	padding-bottom: 20px;
 	
@@ -99,7 +121,7 @@ body{
 	text-align: right;
 	text-transform: uppercase;
 	font-size: 11px;
-	color:rgb(29, 26, 119);
+	color:#040077;
 }
 
 
@@ -118,12 +140,12 @@ body{
 
 }
 .nav a:link {
-	color:rgb(29, 26, 119);
+	color:#040077;
 	text-decoration: none;
 }    
 
 .nav a:visited {
-	color: rgb(29, 26, 119);
+	color: #040077;
 	text-decoration: none
 }  
 
@@ -133,17 +155,17 @@ body{
 } 
 
 .nav a:active {
-	color:rgb(29, 26, 119);
+	color:#040077;
 	text-decoration: underline;		
 }
 
 a:link {
-	color:rgb(94, 86, 86);
+	color:#040077;
 	text-decoration: none;
 }    
 
 a:visited {
-	color: rgb(94, 86, 86);
+	color: #040077;
 	text-decoration: none
 }  
 
@@ -153,39 +175,43 @@ a:hover {
 } 
 
 a:active {
-	color:rgba(240, 185, 235, 0.55);
+	color:#040077;
 	text-decoration: underline;		
 }
 
 #wrapper {
-	width:96%;
+	width:66%;
 	height: auto;
 	
-	border: 2px dotted rgb(29, 26, 119);
-	border-radius: 4px;
-
+	border-right: 2px dotted #040077;
+	border-radius: 1px;
 
 	position: absolute;
 	top:53px;
-	margin-left: 2%;
-	margin-right: 2%;
+	margin-left: 3%;
+	margin-right: 31%;
 	margin-bottom: 2%;
-	overflow-x: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	z-index: 0;
 
 }
 
 #innerwrapper {
 	height: auto;
-
 	position: relative;
 	list-style-type: none;
 	text-align: center;
-	float:middle;
+	float:center;
 	vertical-align: middle;
 	padding: 15px;
 	z-index: 0;
-
+}
+.photostrip{
+	position: absolute;
+	width:20%;
+	margin-left: 69%;
+	margin-right:2%;
 }
 
 #devise{
@@ -193,12 +219,17 @@ a:active {
 }
 
 .post_index{
-	border: 1px solid rgb(29, 26, 119);
-	width: 375px;
+	border-top: 1px dashed #040077;
+
+	width: 600px;
+
 	height: auto;
 	display: inline-block;
-	float: left;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
 	margin: 11px;
+	padding: 2px;
 }
 
 .button_to {
@@ -214,8 +245,8 @@ a:active {
 	padding: 0;
 	vertical-align: top;
 	position: relative;
-	width: 40px;
-	font-size: 11px;
+	width: 60px;
+	font-size: 14px;
  }
 .dropdown a{
     display:block;
@@ -240,7 +271,7 @@ a:active {
 .dropdown ul{
     list-style:none;
     position:absolute;
-    left: 280px;
+    left: 500px;
 }
 .dropdown li{
 	padding: 0px;
@@ -315,6 +346,41 @@ a:active {
 
 .hide{
 	display: none;
+}
+.files > img{
+	width: 60%;
+/*	height:50px !important;
+*/	max-width: 100% !important;
+	border-radius: 5px !important;
+}
+
+.comment_form{
+	margin: 10px;
+	padding: 10px;
+}
+.comment_form input[type=text]{
+	width: 500px;
+	position: relative;
+	text-align: left;
+	padding-left: 10px;
+	border-radius: 5px;
+}
+.uploadcare-widget-button-open{
+	margin-bottom: 8px !important;
+	margin-top: 5px !important;
+	background-color: rgba(240, 185, 235, 0.55) !important;
+	color:#1d1a77 !important;
+	border-radius: 1px !important;
+	font-family: "Utopia","Georgia",serif !important;
+	border-radius: 2px !important;
+	border-color: rgba(240, 185, 235, 0.55) !important;
+}
+.uploadcare-widget-button-open:hover{
+	color: rgb(94, 86, 86) !important;
+	text-decoration: underline !important;	
+}
+.uploadcare-widget-text {
+	display: none !important;
 }
 
 

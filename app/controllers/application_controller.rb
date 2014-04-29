@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  # def post
+  #   @post = Post.find(params[:id])
+  # end
+
   def search
       case params[:type]
         when "title", "body"

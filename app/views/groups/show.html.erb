@@ -1,35 +1,81 @@
 <div id="wrapper">
-	<div id="text-align">
-		<div class="center">
-			<h2><%= @group.group_name%></h2>
-		</div>
+	<div id="innerwrapper">
+		
+		<div class="center"><h1 class="name"><%= @group.group_name%></h1></div>
 
-		<% @posts.each do |post| %>
-			<div class="post_index group_index group_show">
+		<div>
+		<% Post.order(group_id: :asc, created_at: :desc).each do |post| %>
+			<div class="post_index group_index">
 				<div class ="center">
+					
+					<div class="dropdown">
+						<ul>
+							<li><a href="#"><OPTION></OPTION>Options</a>
+								<ul>
+									<li><%= link_to "Edit Post", edit_post_path(post.id), method: :get %></li>
+									<li><%= link_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+
 					<p class="title"><%= link_to post.title, post_path(post.id) %></p>
 					<p><%= post.body %></p>
+					<p class = "files"><%= image_tag(post.file)%></p>
 					<p class ="center"><% if !post.link.empty?%>
 						<%= link_to "Click Here!", post.link %>
 						<%end%></p>
 					<p class="small_text">(<%= post.user.name unless post.user.nil? %>)</p>
-				</div>
+				
+				<div class="text-align">
 					<% if !Comment.where(post_id: post.id).empty? %>
-						<p>Comments:</p>
+						<p class="italics text-align">Comments:</p>
 							<% Comment.where(post_id: post.id).each do |comment| %>
-								<div class="comment">
+								<div class="comment text-align">
 									<p>---<%= comment.body unless comment.body.nil? %></p>
-									<p class="small_text">(<%= comment.user.name unless comment.user.nil? %>)</p>
+									<p class="small_text text-align">(<%= comment.user.name unless comment.user.nil? %>)</p>
 								</div>
-								<%end%>
-						<%end%>
+							<%end%>
+					<%end%>
 			
-				<div class="center">
-					<%= button_to "Edit Post", edit_post_path(post.id), method: :get %>
-					<%= button_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %>
-					<%= button_to "Leave a Comment", new_comment_path, method: :get %>
+				<div>
+						<div class="error-msg">
+							<% if @new_comment.errors.any? %>
+								<ul>
+									<% @new_comment.errors.full_messages.each do |msg| %>
+									<li><%= msg %></li>
+									<% end %>
+								</ul>
+							<% end %>
+						</div>
+
+						<div class="comment_form">
+							<%= form_for(@new_comment) do|f| %>
+								<div class="field">
+									<%= f.hidden_field :post_id, :value => post.id %>
+								</div>
+								
+								<div class="field">
+									<%= f.hidden_field :user_id, :value =>current_user.id %>
+								</div>
+
+								<div class="field">
+									<%= f.text_field :body, :placeholder => "New Comment" %>
+								</div>
+
+								<div class = "field">
+									<%= f.submit %>
+								</div>
+
+							<% end %>
+						</div>
+
 				</div>
-			</div>
 		<% end %>
+		</div>
+
+		
+
 	</div>
 </div>

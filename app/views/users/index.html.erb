@@ -1,17 +1,17 @@
 <div id="wrapper">
 	<div id="innerwrapper">
-
+			
+			<div>
 	   			<% User.order(name: :asc).each do |user| %>
-	   				<div class="post_index comment_index post_show">
+	   				<div class="post_index comment_index">
 
 		 				<ul>
-		 					<li class = "title"><%= link_to user.name, user_path(user.id) %></li>
+		 					<li class = "name2"><%= link_to user.name, user_path(user.id) %></li>
 		 					<li><%= user.email %></li>
 		 				</ul>
 		 			</div>
 	 	 		<%end%>
 			</div>
 
- 		</div>
  	</div>
  </div>

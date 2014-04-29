@@ -2,14 +2,14 @@
 	<div id="innerwrapper">
 
 		<div>
-			<h3 class="italics center"><%= link_to "Make A New Post", new_post_path %></h3>
+			<h3 class="italics center name2"><%= link_to "Make A New Post", new_post_path %></h3>
 		</div>
 
 		<% Post.order(group_id: :asc, created_at: :desc).each do |post| %>
 			<div class="post_index">
 				<div class="dropdown">
 					<ul>
-						<li><a href="#">Options</a>
+						<li><a href="#"><OPTION></OPTION>Options</a>
 							<ul>
 								<li><%= link_to "Edit Post", edit_post_path(post.id), method: :get %></li>
 								<li><%= link_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %></li>
@@ -19,7 +19,7 @@
 				</div>
 
 				<p class="title"><%= link_to post.title, post_path(post.id) %></p>
-				<p><%= truncate(post.body, :length => 15)%> <%= link_to "(Read More)", post_path(post.id) %></p>
+				<p><%= truncate(post.body, :length => 25)%> <%= link_to "(Read More)", post_path(post.id) %></p>
 				
 				<% if !post.link.empty?%>
 					<%= link_to "Click Here!", post.link %>

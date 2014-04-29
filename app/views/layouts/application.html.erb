@@ -24,8 +24,8 @@
 					
 			<ul class= "dashboard">
 					<% if user_signed_in? %>
-						<li><%= link_to "Comments", comments_path %></li>
-						<li><%= link_to "Posts", posts_path %></li>
+						<li><%= link_to "+Comments", new_comment_path %></li>
+						<li><%= link_to "+Posts", new_post_path %></li>
 						<li><%= link_to "Groups", groups_path %></li>
 						<li><%= link_to "HOME", root_path %></li>
 
@@ -49,6 +49,7 @@
 
 		</ul> 
 	</div>
+	
 
 	<div class = "messages">
 		<p class="notice"><%= notice %></p>

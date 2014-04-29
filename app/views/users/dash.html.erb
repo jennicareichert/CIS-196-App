@@ -1,9 +1,9 @@
  <div id="wrapper">
  	<div id="innerwrapper">
  		<div>
- 			<h3>My Friend Groups</h3>
+ 			<h3 class="name2">My Friend Groups</h3>
  			<% @groupings.each do |grouping| %>
- 			<p><%= link_to grouping.group.group_name, group_path(grouping.group_id) %></p>
+ 			<h2 class="title"><%= link_to grouping.group.group_name, group_path(grouping.group_id) %></h2>
  			<%end%>
  		</div>
  	</div>
