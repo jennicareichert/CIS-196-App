@@ -10,7 +10,7 @@
 					<p class="title"><%= link_to group.group_name, group_path(group.id) %></p>
 					
 					<% if Grouping.where("user_id = ? AND group_id =?", current_user.id, group.id).empty? %>
-						<td><%=form_for (@grouping) do |f| %>
+						<td><%=form_for (Grouping.new) do |f| %>
 							<div class = "field">
 								<%= f.hidden_field :user_id, :value => current_user.id %>
 							</div>

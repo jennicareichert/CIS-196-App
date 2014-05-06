@@ -5,7 +5,7 @@ def new
 end
 
 def index
-  @users=User.all
+  @users=User.order(name: :asc)
 end
 
 def create

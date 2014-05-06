@@ -209,9 +209,12 @@ a:active {
 }
 .photostrip{
 	position: absolute;
-	width:20%;
-	margin-left: 69%;
-	margin-right:2%;
+	width:30%;
+	height:90%;
+	margin-left: 70%;
+	margin-right:1%;
+	overflow-y: auto;
+	overflow-x:hidden;
 }
 
 #devise{
@@ -353,7 +356,17 @@ a:active {
 */	max-width: 100% !important;
 	border-radius: 5px !important;
 }
-
+.photostrip .files{
+	display: inline-block;
+	width: 80%;
+	padding: 8px;
+	margin:0;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.photostrip .files > img{
+	width: 100%;
+}
 .comment_form{
 	margin: 10px;
 	padding: 10px;
@@ -383,4 +396,6 @@ a:active {
 	display: none !important;
 }
 
-
+ul{
+	list-style-type: none;
+}

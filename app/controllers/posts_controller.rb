@@ -1,20 +1,27 @@
 class PostsController < ApplicationController
   def new
   	if user_signed_in?
-      @post=Post.new
-      @groupings = Grouping.where(user_id: current_user.id)
-      @groups = []
-      @groupings.each do |g|
-        @groups.push(g.group_id)
+      if Grouping.where(user_id: current_user.id).empty?
+        flash[:notice]="Please join a group first."
+        redirect_to dashboard_path
+      else
+        @post=Post.new
+        @groupings = Grouping.where(user_id: current_user.id)
+        @groups = []
+        @groupings.each do |g|
+          @groups.push(g.group_id)
+        end
+        @group_array = Group.find(@groups)
       end
-      @group_array = Group.find(@groups)
     else
       redirect_to new_user_session_path
     end
   end
 
   def index
-    @posts=Post.all 
+    @posts = Post.order(group_id: :asc, created_at: :desc)
+    #@posts=Post.all
+
   end
 
   def create

@@ -180,11 +180,7 @@ http://enigmatic-river-3353.herokuapp.com/
 		(8) Invite people (current or new users) to join a group
 		(9) Group privacy -- can't join without a validation from an existing member
 		(12) Add in to groups.controller.rb the "show me more" using AJAX to see more than 15 posts
-		(13) show groupings on the users index page
-		(18) database of images only "image show"
 		(19) make sure it looks good on multiple browsers
-		(20) fix the search bar -- can't search body for posts & comments, can't search groups if there are no users
-		(21) add a group image page
 		(22) add date to posts & commments	
 
 	
@@ -201,13 +197,6 @@ http://enigmatic-river-3353.herokuapp.com/
 		
 
 
-<!-- 	<div class = "photostrip">
-		<% Post.where(post.user_id: current_user.id).each do |post| %>
-			<% if !(@post.file).empty? %>
-				<p class = "files"><%= image_tag(post.file)%></p>
-			<%end%>
-		<%end%>
-	</div> -->
 		
 
 

@@ -5,7 +5,7 @@
 			<h3 class="italics center name2"><%= link_to "Make A New Post", new_post_path %></h3>
 		</div>
 
-		<% Post.order(group_id: :asc, created_at: :desc).each do |post| %>
+		<% @posts.each do |post| %>
 			<div class="post_index">
 				<div class="dropdown">
 					<ul>

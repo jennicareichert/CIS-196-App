@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def search
       case params[:type]
-        when "title", "body"
+        when "title"
           @posts = Post.where(params[:type] + " LIKE ?", "%"+params[:search]+"%")
           render'posts/index'
 
@@ -25,12 +25,8 @@ class ApplicationController < ActionController::Base
            @groups = Group.where(params[:type] + " LIKE ?", "%"+params[:search]+"%")
           render'groups/index'
 
-        when "comment_body"
-           @comments = Comment.where("body" + " LIKE ?", "%"+params[:search]+"%")
-          render'comments/index'
-
-      else
-        render 'home/index'
+       else
+        redirect_to 'user#dash'
       end
     end 
 

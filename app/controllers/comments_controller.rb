@@ -1,7 +1,12 @@
 class CommentsController < ApplicationController
   def new
   	if user_signed_in?
-      @comment= Comment.new
+      if Grouping.where(user_id: current_user.id).empty?
+        flash[:notice]="Please join a group first."
+        redirect_to dashboard_path
+      else
+        @comment= Comment.new
+      end
     else
       redirect_to new_user_session_path
     end

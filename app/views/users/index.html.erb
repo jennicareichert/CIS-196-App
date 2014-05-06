@@ -2,12 +2,23 @@
 	<div id="innerwrapper">
 			
 			<div>
-	   			<% User.order(name: :asc).each do |user| %>
+	   			<% @users.each do |user| %>
 	   				<div class="post_index comment_index">
 
 		 				<ul>
 		 					<li class = "name2"><%= link_to user.name, user_path(user.id) %></li>
 		 					<li><%= user.email %></li>
+
+		 					 <div>
+					 			 <% if !Grouping.where(user_id: user.id).empty? %>
+					 			 	<p>Member of Groups:</p>
+						 			 <% Grouping.where(user_id: user.id).each do |groupings| %>
+								 		<li><%= link_to groupings.group.group_name, {:controller => "application", :action => "search", :type => "group_name", :search => groupings.group.group_name} %></li>
+								 		<%end%>
+								 <%end%>
+							 </div>
+
+
 		 				</ul>
 		 			</div>
 	 	 		<%end%>
