@@ -18,11 +18,11 @@ class Notifications < ActionMailer::Base
     @greeting = "Hey there!"
     @user = grouping.user.name
     @id = grouping.group_id
-
+    @email = []
     Grouping.where(group_id: grouping.group_id).each do |group|
-      @email = group.user.email
-      mail to: @email
+      @email.push(group.user.email)
     end
+    mail to: @email
   end
 
 end
