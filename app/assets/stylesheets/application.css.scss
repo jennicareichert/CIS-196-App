@@ -266,7 +266,7 @@ a:active {
 	height: auto;
 	
 	border-right: 2px dotted #040077;
-	border-radius: 1px;
+	border-radius: 8px;
 
 	position: absolute;
 	top:53px;
@@ -446,7 +446,7 @@ a:active {
 	display: none;
 }
 .files > img{
-	width: 60%;
+	width: 50%;
 /*	height:50px !important;
 */	max-width: 100% !important;
 	border-radius: 5px !important;
@@ -472,6 +472,7 @@ a:active {
 	text-align: left;
 	padding-left: 10px;
 	border-radius: 5px;
+	margin-top: 10px;
 }
 .uploadcare-widget-button-open{
 	margin-bottom: 8px !important;
@@ -502,7 +503,8 @@ ul{
 	position: relative;
 	left: 30px;
 	text-indent: -12px;
-	margin-top: 20px;
+	margin-top: 5px;
+	top:10px;
 }
 .right{
 	text-align: right;

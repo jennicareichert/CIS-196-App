@@ -23,12 +23,13 @@
 
 
 						<p class="title"><%= post.title %></p>
+						<p class="small_text">(<%=post.created_at.strftime("%B %e, %Y  -  ")%><%= post.user.name unless post.user.nil? %>)</p>
 						<p class = "files"><%= image_tag(post.file)%></p>
-						<p><%= post.body %></p>
+						<p class="text_align"><%= post.body %></p>
 						<p class ="center"><% if !post.link.empty?%>
 							<%= link_to "Shared Link!", post.link %>
 							<%end%></p>
-						<p class="small_text">(<%=post.created_at.strftime("%B %e, %Y  -  ")%><%= post.user.name unless post.user.nil? %>)</p>
+						
 					
 					<div class="text-align">
 						<% if !Comment.where(post_id: post.id).empty? %>
@@ -82,7 +83,7 @@
 								<% end %>
 							</div>
 
-				</div>
+					</div>
 		<% end %>
 		</div>
 

@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def index
   	@groups = Group.all
+    @groupings = Grouping.where(user_id: current_user.id)
     @grouping = Grouping.new
   end
 
