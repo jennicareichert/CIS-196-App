@@ -1,5 +1,5 @@
-http://enigmatic-river-3353.herokuapp.com/
-
+http://insieme.herokuapp.com
+DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake db:migrate
 1/31/14
 	Homework#1:
 		Created accounts on Heroku & Git Hub
@@ -181,7 +181,6 @@ http://enigmatic-river-3353.herokuapp.com/
 		(9) Group privacy -- can't join without a validation from an existing member
 		(12) Add in to groups.controller.rb the "show me more" using AJAX to see more than 15 posts
 		(19) make sure it looks good on multiple browsers
-		(22) add date to posts & commments	
 
 	
 4/6/14

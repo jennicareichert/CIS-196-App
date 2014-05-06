@@ -8,16 +8,18 @@
 				<div class="post_index group_index">
 					<div class ="center">
 						
-						<div class="dropdown">
-							<ul>
-								<li><a href="#"><OPTION></OPTION>Options</a>
-									<ul>
-										<li><%= link_to "Edit Post", edit_post_path(post.id), method: :get %></li>
-										<li><%= link_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
+						<% if post.user.id == current_user.id %>
+							<div class="dropdown">
+								<ul>
+									<li><a href="#"><OPTION></OPTION>Options</a>
+										<ul>
+											<li><%= link_to "Edit Post", edit_post_path(post.id), method: :get %></li>
+											<li><%= link_to "Destroy Post", post, confirm: "Are you sure you would like to delete your post?", method: :delete %></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						<%end%>
 
 
 						<p class="title"><%= link_to post.title, post_path(post.id) %></p>

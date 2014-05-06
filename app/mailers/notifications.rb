@@ -19,7 +19,10 @@ class Notifications < ActionMailer::Base
     @user = grouping.user.name
     @id = grouping.group_id
 
-    mail to: grouping.user.email
+    Grouping.where(group_id: grouping.group_id).each do |group|
+      @email = group.user.email
+      mail to: @email
+    end
   end
 
 end

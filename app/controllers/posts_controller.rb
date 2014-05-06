@@ -36,7 +36,7 @@ class PostsController < ApplicationController
       end
        @group_array = Group.find(@groups)
         if @post.save
-          redirect_to posts_path
+          redirect_to dashboard_path
         else
           render 'new'
   		  end	
