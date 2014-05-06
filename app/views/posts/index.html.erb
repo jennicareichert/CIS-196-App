@@ -20,11 +20,6 @@
 
 				<p class="title"><%= link_to post.title, post_path(post.id) %></p>
 				<p><%= truncate(post.body, :length => 25)%> <%= link_to "(Read More)", post_path(post.id) %></p>
-				
-				<% if !post.link.empty?%>
-					<%= link_to "Click Here!", post.link %>
-				<%end%>
-					
 				<p class="small_text"> (<%= Group.where(id: post.group_id).take!.group_name unless post.group_id.nil? %>) | (<%= post.user.name unless post.user.nil? %>)</p>				
 			</div>
 		<% end %>

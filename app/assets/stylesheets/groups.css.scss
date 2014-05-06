@@ -4,7 +4,6 @@
 
 .text-align{
 	text-align: left;
-
 }
 .button_to {
 	display: inline-block;
@@ -13,12 +12,9 @@
 .post{
 	border-bottom: 2px dashed white;
 }
-.comment p{
-	display: inline;
-}
-.comment{
-	position: relative;
-	left: 30px;
+p{
+	padding: 0;
+	margin: 5px;
 }
 .group_index{
 	height: auto;

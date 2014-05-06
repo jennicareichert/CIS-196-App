@@ -1,28 +1,36 @@
-<div id="wrapper">
-	<div id="innerwrapper">
+<div class="homepage">
+	<div class="about">
+		<h5 class="center name">About Insieme</h5>
 
-		<h2>Sign in</h2>
+		<p>Growing older is hard. We graduate. We move. We get married. We have kids. And then our kids will also graduate, get into trouble, and experience for themselves many of the same trials and triumphs that we have overcome.</p>
+		<h3 class="center">But growing old shouldn't mean that it is hard to stay in touch!</h3>
+		<p>Insieme means "together." As we grow, we will grow together. Here's to memories past and more memories to come.</p>
+		<h6 class="center italics bottom">Made at Wharton School of Business  ~  Code by Jennica Reichert</h6>
+	</div>
 
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-		
-		<div class="field">
-			<p>Email</p>
-			<%= f.email_field :email, :autofocus => true %>
-		</div>
+	<div class="new_session center">
+			<h2>Sign in</h2>
 
-		<div class="password">
-			<p>Password</p>
-			<%= f.password_field :password %>
-		</div>
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			
+			<div class="field">
+				<p>Email</p>
+				<%= f.email_field :email, :autofocus => true %>
+			</div>
 
-		<% if devise_mapping.rememberable? -%>
-		<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-		<% end -%>
+			<div class="password">
+				<p>Password</p>
+				<%= f.password_field :password %>
+			</div>
 
-		<div><%= f.submit "Sign in" %></div>
-		<% end %>
+			<% if devise_mapping.rememberable? -%>
+			<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+			<% end -%>
 
-		<%= render "devise/shared/links" %>
+			<div><%= f.submit "Sign in" %></div>
+			<% end %>
+
+			<%= render "devise/shared/links" %>
 	</div>
 </div>
 

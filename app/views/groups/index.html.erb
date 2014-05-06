@@ -7,9 +7,13 @@
 			<% @groups.each do |group| %>
 				
 				<div class="post_index group_index">
-					<p class="title"><%= link_to group.group_name, group_path(group.id) %></p>
+					<% if !Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? %>
+						<p class="title"><%= link_to group.group_name, group_path(group.id) %></p>
+					<%else%>
+						<p class="title"><%= group.group_name %></p>
+					<%end%>
 					
-					<% if Grouping.where("user_id = ? AND group_id =?", current_user.id, group.id).empty? %>
+					<% if Grouping.where("user_id = ? AND group_id = ?", current_user.id, group.id).empty? %>
 						<td><%=form_for (Grouping.new) do |f| %>
 							<div class = "field">
 								<%= f.hidden_field :user_id, :value => current_user.id %>

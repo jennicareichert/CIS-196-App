@@ -15,7 +15,7 @@
 				<li>
 					<%= form_tag search_path, method: :get do %>
 						<%= text_field_tag :search %>
-						<%= select_tag(:type, options_for_select([['Titles', "title"],  ["Users", "name"], ['Groups', 'group_name']]))%>
+						<%= select_tag(:type, options_for_select([['Posts', "title"],  ["Users", "name"], ['Groups', 'group_name']]))%>
 						<%= submit_tag "Search" %>
 					<%end%>
 				</li>
@@ -28,8 +28,7 @@
 						<li><%= link_to "+Posts", new_post_path %></li>
 						<li><%= link_to "+Groups", groups_path %></li>
 						<li><%= link_to "HOME", root_path %></li>
-
-					<% end %>
+					<%end%>
 			</ul>
 
 			<div class="dropdown hide">
@@ -60,7 +59,8 @@
 		<%end%>
 	</div>
 	
-	<div class = "messages">
+	
+	<div class = "italics center messages">
 		<p class="notice"><%= notice %></p>
 		<p class = "alerts"><%= alert %></p>
 	</div>

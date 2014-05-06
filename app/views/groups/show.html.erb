@@ -22,21 +22,30 @@
 						<%end%>
 
 
-						<p class="title"><%= link_to post.title, post_path(post.id) %></p>
-						<p><%= post.body %></p>
+						<p class="title"><%= post.title %></p>
 						<p class = "files"><%= image_tag(post.file)%></p>
+						<p><%= post.body %></p>
 						<p class ="center"><% if !post.link.empty?%>
-							<%= link_to "Click Here!", post.link %>
+							<%= link_to "Shared Link!", post.link %>
 							<%end%></p>
-						<p class="small_text">(<%= post.user.name unless post.user.nil? %><%=post.created_at.strftime("  -  %B %e, %Y")%>)</p>
+						<p class="small_text">(<%=post.created_at.strftime("%B %e, %Y  -  ")%><%= post.user.name unless post.user.nil? %>)</p>
 					
 					<div class="text-align">
 						<% if !Comment.where(post_id: post.id).empty? %>
 							<p class="italics text-align">Comments:</p>
-								<% Comment.where(post_id: post.id).each do |comment| %>
-									<div class="comment text-align">
-										<p>---<%= comment.body unless comment.body.nil? %></p>
-										<p class="small_text text-align">(<%= comment.user.name unless comment.user.nil? %>)</p>
+
+							<% Comment.where(post_id: post.id).each do |comment| %>
+								<div class="comment text-align">
+									<p>~<%= comment.body unless comment.body.nil? %></p>
+									<p class="small_text">(<%=comment.created_at.strftime("%B %e, %Y  -  ")%><%= comment.user.name unless comment.user.nil? %>)</p>
+
+									<div class="small_text right">
+										<% if comment.user.id == current_user.id %>
+											<p>{<%= link_to "Edit Comment", edit_comment_path(comment.id), method: :get %></p>
+											<p><%= link_to "Destroy Comment", comment, confirm: "Are you sure you would like to delete your comment?", method: :delete %>}</p>
+										<%end%>	
+									</div>
+
 									</div>
 								<%end%>
 						<%end%>
