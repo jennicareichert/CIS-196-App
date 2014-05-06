@@ -181,10 +181,8 @@ DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake d
 
 	Problems to fix:
 		(8) Invite people (current or new users) to join a group -- people can search existing groups or make their own groups, 
-		(9) Group privacy -- can't join or see the group without a validation from an existing member
 		(12) Add in to groups.controller.rb the "show me more" using AJAX to see more than 15 posts
 		(13) fix search case sensitivity
-		(14) about page view
 
 	
 4/6/14

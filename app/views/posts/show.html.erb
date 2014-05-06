@@ -1,6 +1,20 @@
 <div id="wrapper">
 	<div id="innerwrapper">
 		<div class="post_index comment_index post_show group_index">
+		
+			<% if @post.user.id == current_user.id %>
+					<div class="dropdown">
+						<ul>
+							<li><a href="#"><OPTION></OPTION>Options</a>
+								<ul>
+									<li><%= link_to "Edit Post", edit_post_path(@post.id), method: :get %></li>
+									<li><%= link_to "Destroy Post", @post, confirm: "Are you sure you would like to delete your post?", method: :delete %></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+			<%end%>
+
 			<p class="title center"><%= @post.title %></p>
 			<p class ="center files"><%= image_tag(@post.file)%></p>
 			<p class="center"><%= @post.body%></p>
@@ -10,6 +24,8 @@
 				<%end%></p>
 			<p class="small_text center">(<%= @post.created_at.strftime("%B %e, %Y  -  ")%><%= @post.user.name %>)</p>	
 	
+				
+
 			<div class="comment">
 				<% @comments.each do |comment| %>
 				<div>

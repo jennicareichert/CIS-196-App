@@ -5,7 +5,8 @@
 			<h3 class="italics center name2"><%= link_to "Make A New Post", new_post_path %></h3>
 		</div>
 
-		<% @posts.each do |post| %>
+			<% @posts.each do |post| %>
+				<% if post.user.id == current_user.id %>
 			<div class="post_index">
 				<div class="dropdown">
 					<ul>
@@ -23,6 +24,7 @@
 				<p class="small_text"> (<%= Group.where(id: post.group_id).take!.group_name unless post.group_id.nil? %>) | (<%= post.user.name unless post.user.nil? %>)</p>				
 			</div>
 		<% end %>
+		<%end%>	
 		
 	</div>
 </div>
