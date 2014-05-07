@@ -183,6 +183,8 @@ DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake d
 		(8) Invite people (current or new users) to join a group -- people can search existing groups or make their own groups, 
 		(12) Add in to groups.controller.rb the "show me more" using AJAX to see more than 15 posts
 		(13) fix search case sensitivity
+		(14) after post -- need it to redirect to the group show page according to the group.id for that post
+
 
 	
 4/6/14
@@ -195,7 +197,57 @@ DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake d
 	HOMEWORK #10:
 		Inserted JavaScript into ... 
 		application.js ---- does dyanmic resizing as the window size changes for the for height of #wrapper and the width of my nav bar. (CSS for the new respacing of the nav bar not yet finished, but the jquery works to resize as the window changes)
+	
+5/6/14
+	FINAL PROJECT:  
+		Final deployment: http://insieme.herokuapp.com/users/sign_in
+		Github: http://github.com/jennicareichert/CIS-196-App
+
+
+		Description:
+			Insieme is an app designed for females who are looking for an easy, more personalized space to remain in touch.  It is similar in its functionality to a Facebook Group, but reads more like a blog, with pictures and content immediaely observable on each group blog page (aka the group show pages).  The added functionality is that it also notifies group members (via email) when new activity occurs, and affords individuals the opportunity to be part of many groups at once. Finally, the "photostrip" along the right hand side stands as a memory to all of the photos and images that each user has chosen to share.  These photos appear only after the user uploads a new post with a photo, and only includes the photos that that user has posted (not all photos posted for all group members). Overall, Insieme is designed to help to make it more frictionless to stay in touch as we graduate, as our lives change, and as we drift both geographically and personally.
 		
+		Errors and problems -- 
+			(1) I've never coded before. I had very little knowledge of the naming conventions for how code languages worked, how to use them, or even what CSS and HTML looked like.  I think that the most efficient and successful way for me to overcome these issues was to dilligently attend office hours with Jenny (literally every week on both days) and try to get some extra help and have her work through the road blocks I was facing. 
+
+			(2) Didn't know what types of functionality were within the course's capacity to code.  Not knowing the potential of the ruby language was also overcome in office hours, where I bounced ideas off of peers and Jenny.  
+
+			(3) App still doesn't work terrifically on all browsers.  I created it on chrome so that's where it looks best, but it's not 100% everywhere else.
+
+		Pretty points -- uses CSS (obviously) but uses jQuery to dynamically resize the #wrapper and #innerwrapper as the window size changes.  Also used jQuery for the nav bar so that the options along the top of the nav bar become condensed into a dropdown when the page shrinks too much to see all of them. The jQuery resizing can be found in javascripts/application.js
+
+		Ruby Gem -- Used the Devise gem (as per class instructions) to enhance user sign-in and sign-up processes. The documentation used in class can also be found at: https://github.com/plataformatec/devise
+
+		Heroku Addon -- Used the letteropener addon to send email notifications for when (a) a user joins a group or (b) when a post is commented on.  For the user joining a group, the email is sent to all members of the group, including the individual who just joined the group.  For the comments, an email is sent to the individual who originally created the post. The documentation can be found at: https://github.com/uploadcare/uploadcare-ruby and also on their website at https://uploadcare.com/documentation/
+
+		Database -- have 4 main items (users, posts, comments, and groups). Relationships between them can be seen in the schema or models, but users and groups have a many-to-many relationship called "groupings." 
+
+		Validations -- Added validations to groups (presence, length, and uniqueness)
+			Added validations to posts (presence, length) as well as to the post links so that they follow a given format to hyperlink when viewed online.
+			Added validations to comments (presence, length)
+			Added validations to user (phone number & number format, user name presence)
+
+		Scope -- added queries to the following:
+			users_controller.rb --> "def dash" has a Grouping.where query to only show the user the groups they've joined when they return to the "home" page of the app
+
+			posts_controller.rb --> "def new" has a Grouping.where query to make sure that users cannot make a new post if they have not yet joined a group.  This is because posts belong to users, who belong to groups and one must select a group in order to complete a post. "def index" also has a Post.order query o organize the posts according to which group they belong to.
+
+
+			comments_controller.rb --> "def new" has a Grouping.where query to make sure that users cannot make a new comment if they have not yet joined a group.  This is because comments belong to posts, and posts belong to users and only appear if attributed to a group, plus one must select a post in order to complete a comment, which is impossible if they have no posts to choose from.
+
+			groups_controller.rb --> "def show" has a post.where, post.order, post.limit to only show the posts that belong to users of that group, order them by recency, and then limit the number of posts shown to a few so taht the page doesn't continue on forever.
+
+			EXTRA CREDIT: I also installed another ruby gem, uploadcare, so that posts can show pictures (I've called them files) when people are reading through the group show pages.
+
+		
+
+
+
+
+
+
+
+
 
 
 		
