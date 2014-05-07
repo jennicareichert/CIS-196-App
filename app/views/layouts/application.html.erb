@@ -24,7 +24,6 @@
 					
 			<ul class= "dashboard">
 					<% if user_signed_in? %>
-						<li><%= link_to "+Comments", new_comment_path %></li>
 						<li><%= link_to "+Posts", new_post_path %></li>
 						<li><%= link_to "+Groups", groups_path %></li>
 						<li><%= link_to "HOME", root_path %></li>
@@ -37,9 +36,8 @@
 							
 							<li class="options"><a href="#">Options</a>
 								<ul id="option-drop">
-									<li class = "drop"><%= link_to "Comments", comments_path %></li>
-									<li class = "drop"><%= link_to "Posts", posts_path %></li>
-									<li class = "drop"><%= link_to "Groups", groups_path %></li>
+									<li class = "drop"><%= link_to "+Posts", posts_path %></li>
+									<li class = "drop"><%= link_to "+Groups", groups_path %></li>
 								</ul>
 							</li>
 						</ul>

@@ -26,7 +26,6 @@ class PostsController < ApplicationController
 
   def create
   		@post=Post.new(post_params)
-      @group = Group.find(params[:id])
       
       if @post.user_id != current_user.id
         redirect_to root_path
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
       end
        @group_array = Group.find(@groups)
         if @post.save
-          redirect_to dashboard_path
+        redirect_to dashboard_path
         else
           render 'new'
   		  end	
