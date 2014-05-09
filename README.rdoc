@@ -86,8 +86,6 @@ DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake d
 			post:belongs_to
 
 			
-			*ADD EVENTS LATER* -- extra table added at end
-
 	Homework #4:
 		Created controllers for each object/table.(rails generate controller TABLE NAME new index show edit)
 
@@ -220,7 +218,7 @@ DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake d
 
 		Heroku Addon -- Used the letteropener addon to send email notifications for when (a) a user joins a group or (b) when a post is commented on.  For the user joining a group, the email is sent to all members of the group, including the individual who just joined the group.  For the comments, an email is sent to the individual who originally created the post. The documentation can be found at: https://github.com/uploadcare/uploadcare-ruby and also on their website at https://uploadcare.com/documentation/
 
-		Database -- have 4 main items (users, posts, comments, and groups). Relationships between them can be seen in the schema or models, but users and groups have a many-to-many relationship called "groupings." 
+		Database -- have 4 main items (users, posts, comments, and groups). Relationships between them can be seen in the schema or models, but users and groups have a many-to-many relationship through "groupings." Other than than, comments belong to posts, posts belong to users, and users can belong to a group, but the post also belongs to the group in which it is posted.
 
 		Validations -- Added validations to groups (presence, length, and uniqueness)
 			Added validations to posts (presence, length) as well as to the post links so that they follow a given format to hyperlink when viewed online.

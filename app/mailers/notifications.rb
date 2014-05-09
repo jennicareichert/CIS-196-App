@@ -7,8 +7,8 @@ class Notifications < ActionMailer::Base
   #   en.notifications.new_comment.subject
   #
   def new_comment(comment)
-    @greeting = "Hi"
-    @id = comment.id
+    @greeting = "Hey there!"
+    @post_id = comment.post.id
     @commenter = comment.user.name
 
     mail to: comment.post.user.email

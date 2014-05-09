@@ -1,0 +1,12 @@
+<%= form_for(@accepted) do|f| %>
+
+
+<div class="field">
+	<%= f.hidden_field :accepted, :value => true %>
+</div>
+
+<div class = "actions">
+	<%= f.submit "Accept User" %>
+</div>
+
+<%end%>

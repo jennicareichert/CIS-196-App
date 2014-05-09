@@ -48,4 +48,9 @@ def create
     @group.destroy
       redirect_to groups_path
   end
+
+def accepted
+  @accepted = Grouping.find(params[:id])
+end
+
 end

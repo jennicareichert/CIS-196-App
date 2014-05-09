@@ -1,7 +1,8 @@
 class Group < ActiveRecord::Base
 
-belongs_to :user
-has_many :groupings, :dependent => :destroy
+has_many :users, :through => :groupings
+has_many :groupings, :dependent => :destroy, :conditions => 'accepted IS NOT NULL'
+	
 has_many :posts, :dependent => :destroy
 
 #validations

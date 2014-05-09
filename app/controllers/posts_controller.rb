@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       end
        @group_array = Group.find(@groups)
         if @post.save
-        redirect_to dashboard_path
+        redirect_to group_path(@post.group_id)
         else
           render 'new'
   		  end	
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     if user_signed_in?
      @post=Post.find(params[:id])
     else
-      redirect_to new_user_session_path
+      redirect_to group_path(@post.group_id)
     end
   end
 
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
         redirect_to root_path
       else 
         if@post.update_attributes(post_params)
-           redirect_to post_path(@post.id)
+          redirect_to group_path(@post.group_id)
         else
            render 'edit'
         end
@@ -79,7 +79,7 @@ class PostsController < ApplicationController
   def destroy
     @post=Post.find(params[:id])
     @post.destroy
-      redirect_to posts_path
+      redirect_to group_path(@post.group_id)
   end
 
  

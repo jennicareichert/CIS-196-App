@@ -65,8 +65,8 @@ body{
 	text-align: justify;
 }
 .about{
-	width: 60%;
-	height: 50%;
+	min-height: 350px;
+	min-width: 450px;
 
 	background-color: rgba(238, 238, 238, 0.55);
 	border: 2px dotted #1d1a77;

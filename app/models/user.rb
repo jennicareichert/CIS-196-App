@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # has_many :groups
-  has_many :groupings, :dependent => :destroy
+  has_many :groupings, :dependent => :destroy, :conditions => 'accepted IS NOT NULL'
+  has_many :groups, :through => :groupings
 
   has_many :posts, :dependent => :destroy
   has_many :comments, :dependent => :destroy

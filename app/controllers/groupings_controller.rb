@@ -20,4 +20,13 @@ class GroupingsController < ApplicationController
 		@grouping.destroy
 		redirect_to groups_path
 	end
+
+	def update
+		@grouping=Group.find(params[:id])
+    	if@grouping.update_attributes(group_params)
+      		redirect_to group_path(@group.id)
+    	else
+        	render 'edit'
+    	end
+	end
 end
