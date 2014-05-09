@@ -1,12 +1,21 @@
-<%= form_for(@accepted) do|f| %>
+<div id="wrapper">
+	<div id="innerwrapper">
+		<% if !@grouping.accepted %>
+			<h2 class="italics center">Would you like to accept these users to your groups?</h2>
+
+			<%= form_for(@accepted) do|f| %>
+				<div class="field">
+					<%= f.hidden_field :accepted, :value => true %>
+				</div>
+
+				<div class = "actions">
+					<%= f.submit "Accept User" %>
+				</div>
+			<%end%>
+		<%else%>
+			<h2 class="italics center">No pending requests.</h2>
+		<%end%>
 
 
-<div class="field">
-	<%= f.hidden_field :accepted, :value => true %>
+	</div>
 </div>
-
-<div class = "actions">
-	<%= f.submit "Accept User" %>
-</div>
-
-<%end%>

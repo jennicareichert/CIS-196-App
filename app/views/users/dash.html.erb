@@ -1,10 +1,22 @@
  <div id="wrapper">
  	<div id="innerwrapper">
  		<div>
+ 			
  			<h3 class="name2">My Friend Groups</h3>
  			<% @groupings.each do |grouping| %>
- 			<h2 class="title"><%= link_to grouping.group.group_name, group_path(grouping.group_id) %></h2>
+ 			 <div>
+ 			 	 <% if !grouping.accepted %>
+				 <h2 class = "title inline"><%= grouping.group.group_name %></h2>
+				 <h2 class = "title inline italics ">  ~  Pending</h2>
+
+				 <%else%>
+ 			 	 <h2 class="title inline"><%= link_to grouping.group.group_name, group_path(grouping.group_id) %></h2>
+ 			 	 
+				<%end%>
+ 			</div>
+
  			<%end%>
+ 		
  		</div>
  	</div>
  </div>

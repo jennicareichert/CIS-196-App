@@ -6,7 +6,7 @@ class PostsController < ApplicationController
         redirect_to dashboard_path
       else
         @post=Post.new
-        @groupings = Grouping.where(user_id: current_user.id)
+        @groupings = Grouping.where("user_id = ? AND accepted = ?", current_user.id, true)
         @groups = []
         @groupings.each do |g|
           @groups.push(g.group_id)
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
       if @post.user_id != current_user.id
         redirect_to root_path
       else 
-         @groupings = Grouping.where(user_id: current_user.id)
+          @groupings = Grouping.where("user_id = ? AND accepted = ?", current_user.id, true)
           @groups = []
           @groupings.each do |g|
           @groups.push(g.group_id)

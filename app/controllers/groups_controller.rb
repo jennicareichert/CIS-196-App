@@ -51,6 +51,22 @@ def create
 
 def accepted
   @accepted = Grouping.find(params[:id])
+  @user = @accepted.user
+  @grouping = @accepted.group
+end
+
+def pending
+  if user_signed_in?
+    @user = current_user
+    @groupings = Grouping.where(user_id: current_user.id)   
+    @something = [] 
+    Grouping.where(user_id: current_user.id).each do |thing|
+      @something.push(thing.id)
+    end
+    @pending = Grouping.where("group_id IN (?) AND accepted=?", @something, false)
+  else
+    redirect_to dashboard_path
+  end
 end
 
 end

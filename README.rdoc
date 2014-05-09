@@ -238,7 +238,11 @@ DROP DATABASE -- heroku pg:reset DATABASE -- heroku restart -- heroku run rake d
 			EXTRA CREDIT: I also installed another ruby gem, uploadcare, so that posts can show pictures (I've called them files) when people are reading through the group show pages.
 
 		
-
+<% if !Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? && Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).take!.accepted %>
+					<p class="title"><%= link_to grouping.group.group_name, group_path(grouping.group_id) %></p>
+				<%else%>
+					<p class="title"><%= grouping.group.group_name %></p>
+				<%end%>
 
 
 

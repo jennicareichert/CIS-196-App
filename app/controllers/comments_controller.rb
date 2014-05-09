@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def new
   	if user_signed_in?
-      if Grouping.where(user_id: current_user.id).empty?
+      if Grouping.where("user_id = ? AND accepted = ?", current_user.id, true).empty?
         flash[:notice]="Please join a group first."
         redirect_to dashboard_path
       else

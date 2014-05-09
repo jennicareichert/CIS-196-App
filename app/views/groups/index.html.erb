@@ -7,13 +7,16 @@
 			<% @groups.each do |group| %>
 				
 				<div class="post_index group_index">
-					<% if !Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? %>
+					<% if !Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? && Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).take!.accepted %>
 						<p class="title"><%= link_to group.group_name, group_path(group.id) %></p>
-					<%else%>
+
+						<%else%>
 						<p class="title"><%= group.group_name %></p>
 					<%end%>
 					
-					<% if Grouping.where("user_id = ? AND group_id = ?", current_user.id, group.id).empty? %>
+					
+					<% if Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? %>
+						
 						<td><%=form_for (Grouping.new) do |f| %>
 							<div class = "field">
 								<%= f.hidden_field :user_id, :value => current_user.id %>
@@ -23,15 +26,20 @@
 								<%= f.hidden_field :group_id, :value => group.id %>
 							</div>
 
+							<div class = "field">
+								<%= f.hidden_field :accepted, :value => false %>
+							</div>
+
 							<div class = "actions">
 								<%= f.submit "Join Group" %>
 							</div>
 						<%end%></td>
 						<%else%>
+						<% if Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).take!.accepted %>
 							<%= button_to "Leave Group", Grouping.where("user_id = ? AND group_id = ?", current_user.id, group.id).take!, method: :delete %>
-						<% end %>
-	
-					<% if !Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? %>
+							<%end%>
+					<%end%>
+					<% if !Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).empty? && Grouping.where("user_id =? AND group_id = ?", current_user.id, group.id).take!.accepted%>
 						<%= button_to "Edit Group", edit_group_path(group.id), method: :get %>
 						<%= button_to "Destroy Group", group, confirm: "Are you sure you would like to delete your group?", method: :delete %>
 					<%end%>

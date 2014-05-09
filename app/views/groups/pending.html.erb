@@ -1,0 +1,29 @@
+ <div id="wrapper">
+	<div id="innerwrapper">
+	<% if @pending %>
+		
+		<h2 class="italics center name">Pending Requests</h2>
+
+		
+		<% @pending.each do |pending| %>
+			<div class="inline">
+				<h2><%= pending.user.name %>  ~  <%= pending.group.group_name %></h2>
+				
+				<%= form_for(pending) do|f| %>
+					<div class="field inline">
+						<%= f.hidden_field :accepted, :value => true %>
+					</div>
+
+					<div class = "actions inline">
+						<%= f.submit "Accept User" %>
+					</div>
+				<%end%>
+				<%end%>
+			</div>
+			<%else%>
+			<h2 class="italics center">No pending requests.</h2>
+	<%end%>
+
+
+	</div>
+</div>

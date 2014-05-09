@@ -11,7 +11,7 @@ class GroupingsController < ApplicationController
 	end
 
 	def grouping_params
-		params.require(:grouping).permit(:user_id, :group_id) 
+		params.require(:grouping).permit(:user_id, :group_id, :accepted) 
 		# if params[:grouping]
 	end
 
@@ -22,11 +22,12 @@ class GroupingsController < ApplicationController
 	end
 
 	def update
-		@grouping=Group.find(params[:id])
-    	if@grouping.update_attributes(group_params)
-      		redirect_to group_path(@group.id)
+		@grouping=Grouping.find(params[:id])
+    	if @grouping.update_attributes(grouping_params)
+      		Notifications.accepted(@grouping).deliver
+      		redirect_to group_path(@grouping.group.id)
     	else
-        	render 'edit'
+        	redirect_to update_path(params[:id])
     	end
 	end
 end

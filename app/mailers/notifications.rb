@@ -1,5 +1,5 @@
 class Notifications < ActionMailer::Base
-  default from: "friends@example.com"
+  default from: "insieme@example.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -14,10 +14,20 @@ class Notifications < ActionMailer::Base
     mail to: comment.post.user.email
   end
 
-  def join_group (grouping)
+  def accepted(grouping)
     @greeting = "Hey there!"
     @user = grouping.user.name
     @id = grouping.group_id
+    @name = grouping.group.group_name
+    @email = grouping.user.email
+    mail to: @email
+  end
+
+  def join_group (grouping)
+    @greeting = "Hey there!"
+    @user = grouping.user.name
+    @id = grouping.id
+    @name = grouping.group.group_name
     @email = []
     Grouping.where(group_id: grouping.group_id).each do |group|
       @email.push(group.user.email)

@@ -48,7 +48,8 @@ end
 def dash
   if user_signed_in?
     @user = current_user
-    @groupings = Grouping.where(user_id: current_user.id)
+    @groupings = Grouping.where(user_id: current_user.id)    
+
     if @groupings.empty? 
       redirect_to groups_path
     end

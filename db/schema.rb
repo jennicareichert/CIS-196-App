@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425182806) do
+ActiveRecord::Schema.define(version: 20140509210003) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140425182806) do
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "accepted"
   end
 
   add_index "groupings", ["group_id"], name: "index_groupings_on_group_id"
