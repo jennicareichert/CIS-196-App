@@ -27,9 +27,9 @@
 			<div class="inline">
 				<% @own.each do |group| %>
 					<% if Grouping.where(group_id: group.group_id).count == 1 && grouping.user_id == current_user.id %>
-				<h2 class = "center"><%= pending.user.name %>  ~  <%= pending.group.group_name %></h2>
+				<h2 class = "center"><%= group.user.name %>  ~  <%= group.group.group_name %></h2>
 				
-				<%= form_for(pending) do|f| %>
+				<%= form_for(group) do|f| %>
 					<div class="field inline">
 						<%= f.hidden_field :accepted, :value => true %>
 					</div>
