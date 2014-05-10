@@ -30,7 +30,9 @@ class Notifications < ActionMailer::Base
     @name = grouping.group.group_name
     @email = []
     Grouping.where(group_id: grouping.group_id).each do |group|
-      @email.push(group.user.email)
+      if grouping.user_id != current_user.id
+        @email.push(group.user.email)
+      end
     end
     mail to: @email
   end
