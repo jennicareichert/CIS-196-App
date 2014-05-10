@@ -58,10 +58,11 @@ end
 def pending
   if user_signed_in?
     @user = current_user
-    @groupings = Grouping.where(user_id: current_user.id)   
+    @groupings = Grouping.where("user_id = ? AND accepted = ?", current_user.id, true) 
+    @own = Grouping.where("user_id = ? AND accepted = ?", current_user.id, false)
     @something = [] 
-    Grouping.where(user_id: current_user.id).each do |thing|
-      @something.push(thing.id)
+    @groupings.each do |thing|
+      @something.push(thing.group_id)
     end
     @pending = Grouping.where("group_id IN (?) AND accepted=?", @something, false)
   else
