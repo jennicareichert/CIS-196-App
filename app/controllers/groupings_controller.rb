@@ -3,7 +3,7 @@ class GroupingsController < ApplicationController
 	def create
 		@grouping = Grouping.new(grouping_params)
 		if @grouping.save
-			Notifications.join_group(@grouping).deliver
+			Notifications.join_group(@grouping, current_user).deliver
 			redirect_to groups_path
 		else
 			redirect_to groups_path

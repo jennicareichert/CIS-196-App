@@ -23,7 +23,7 @@ class Notifications < ActionMailer::Base
     mail to: @email
   end
 
-  def join_group (grouping)
+  def join_group (grouping, current_user)
     @greeting = "Hey there!"
     @user = grouping.user.name
     @id = grouping.id
