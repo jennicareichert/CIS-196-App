@@ -24,9 +24,9 @@
 					
 			<ul class= "dashboard">
 					<% if user_signed_in? %>
-						<li><%= link_to "Requests", pending_path %></li>
 						<li><%= link_to "+Posts", new_post_path %></li>
 						<li><%= link_to "+Groups", groups_path %></li>
+						<li><%= link_to "Requests", pending_path %></li>
 						<li><%= link_to "HOME", root_path %></li>
 					<%end%>
 			</ul>
