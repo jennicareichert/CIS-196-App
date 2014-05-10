@@ -11,7 +11,7 @@
 				<h2><%= pending.user.name %>  ~  <%= pending.group.group_name %></h2>
 				
 				<%= form_for(pending) do|f| %>
-					<div class="field inline">
+					<div class="field center inline">
 						<%= f.hidden_field :accepted, :value => true %>
 					</div>
 
@@ -25,17 +25,19 @@
 
 			<% @own.each do |pending| %>
 			<div class="inline">
-				<% if @own.count == 1 %>
-				<h2><%= pending.user.name %>  ~  <%= pending.group.group_name %></h2>
+				<% @own.each do |group| %>
+					<% if Grouping.where(group_id: group.group_id).count == 1 && grouping.user_id == current_user.id %>
+				<h2 class = "center"><%= pending.user.name %>  ~  <%= pending.group.group_name %></h2>
 				
 				<%= form_for(pending) do|f| %>
 					<div class="field inline">
 						<%= f.hidden_field :accepted, :value => true %>
 					</div>
 
-					<div class = "actions inline">
+					<div class = "actions center inline">
 						<%= f.submit "Accept User" %>
 					</div>
+				<%end%>
 				<%end%>
 				<%end%>
 
